@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Arcade Hub - All-in-One Mini Games Portal</title>
+    <title>응이아의 작은 게임방</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -61,6 +61,69 @@
         canvas {
             touch-action: none;
         }
+
+        /* Cozy illustrated arcade, inspired by calm Pinterest game scenes. */
+        :root { color-scheme: dark; --night:#101b24; --cream:#fff3df; --mint:#9ed8bd; --sun:#ffc879; --coral:#ff9078; }
+        body { background:radial-gradient(ellipse at 16% 18%,rgba(70,128,119,.18),transparent 32%),radial-gradient(ellipse at 88% 56%,rgba(190,121,82,.12),transparent 30%),#101b24; color:#f7f0e4; }
+        .glass { background:rgba(23,39,49,.82); border:1px solid rgba(255,243,223,.12); box-shadow:0 12px 36px rgba(4,12,17,.18); }
+        header.glass { background:rgba(16,27,36,.9); border-color:rgba(255,243,223,.1); }
+        header .bg-gradient-to-tr { background-image:linear-gradient(145deg,#f2a574,#e47d70)!important; box-shadow:0 10px 25px rgba(228,125,112,.22)!important; }
+        header .bg-gradient-to-r { background-image:linear-gradient(90deg,#fff3df,#d8e9d8)!important; }
+        header .text-indigo-400 { color:var(--mint)!important; }
+        #categoryNav button { border-radius:999px!important; padding:10px 17px!important; }
+        #categoryNav button.bg-indigo-600 { background:#f1b578!important; color:#2d2925!important; box-shadow:0 8px 20px rgba(241,181,120,.18)!important; }
+        #categoryNav button:not(.bg-indigo-600) { background:rgba(255,243,223,.06)!important; color:#c7d0ca!important; border-color:rgba(255,243,223,.12)!important; }
+        #categoryNav button:not(.bg-indigo-600):hover { background:rgba(255,243,223,.12)!important; color:#fff3df!important; }
+        #favFilterBtn { border-radius:999px!important; background:rgba(255,243,223,.07)!important; border-color:rgba(255,243,223,.14)!important; color:#eee4d4!important; }
+        #favFilterBtn .text-amber-400 { color:var(--sun)!important; }
+        .game-card { min-height:245px; padding:18px!important; border-radius:22px!important; background:linear-gradient(155deg,rgba(32,53,62,.96),rgba(21,37,46,.96))!important; border-color:rgba(255,243,223,.1)!important; box-shadow:0 12px 28px rgba(4,12,17,.16); }
+        .game-card:hover { transform:translateY(-5px); border-color:rgba(255,200,121,.42)!important; box-shadow:0 18px 38px rgba(2,10,14,.34),0 0 0 1px rgba(255,200,121,.1); }
+        .game-card h3 { color:#fff3df!important; letter-spacing:-.02em; }
+        .game-card p { color:#b7c6c0!important; font-size:13px!important; }
+        .game-card > div:first-child > div:first-child > div:first-child { width:100%; height:88px; border-radius:15px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; font-size:0!important; border:1px solid rgba(255,243,223,.12)!important; }
+        .game-card > div:first-child > div:first-child > div:first-child:before { content:""; position:absolute; inset:0; opacity:.95; }
+        .game-card > div:first-child > div:first-child > div:first-child:after { position:relative; z-index:1; font-size:39px; filter:drop-shadow(0 5px 8px rgba(12,22,27,.24)); }
+        .game-card:nth-child(1) > div:first-child > div:first-child > div:first-child:before { background:radial-gradient(circle at 72% 22%,#ffe2a4 0 7%,transparent 8%),linear-gradient(155deg,#8fc9ad 0 48%,#426f65 49% 62%,#e7b476 63%); }
+        .game-card:nth-child(1) > div:first-child > div:first-child > div:first-child:after { content:"▦"; color:#fff4d5; }
+        .game-card:nth-child(2) > div:first-child > div:first-child > div:first-child:before { background:radial-gradient(circle at 18% 80%,#f4c5a0 0 9%,transparent 10%),linear-gradient(135deg,#8776ad,#426e7c 55%,#d49483); }
+        .game-card:nth-child(2) > div:first-child > div:first-child > div:first-child:after { content:"♫"; color:#ffe2b3; }
+        .game-card:nth-child(3) > div:first-child > div:first-child > div:first-child:before { background:linear-gradient(135deg,#c6d6b0,#6e9882 50%,#273e47); }
+        .game-card:nth-child(3) > div:first-child > div:first-child > div:first-child:after { content:"♠"; color:#fff3df; }
+        .game-card:nth-child(4) > div:first-child > div:first-child > div:first-child:before { background:radial-gradient(circle at 20% 25%,#ffe6a8 0 5%,transparent 6%),linear-gradient(135deg,#ea9b91,#ae6e83 55%,#5d617c); }
+        .game-card:nth-child(4) > div:first-child > div:first-child > div:first-child:after { content:"◉"; color:#ffe9b8; }
+        .game-card:nth-child(5) > div:first-child > div:first-child > div:first-child:before { background:linear-gradient(145deg,#8dc5b4,#557e8b 48%,#454d73); }
+        .game-card:nth-child(5) > div:first-child > div:first-child > div:first-child:after { content:"▧"; color:#fff0c9; }
+        .game-card:nth-child(6) > div:first-child > div:first-child > div:first-child:before { background:radial-gradient(circle at 78% 22%,#f5c784 0 8%,transparent 9%),linear-gradient(145deg,#9c8eae,#607e81 52%,#455d57); }
+        .game-card:nth-child(6) > div:first-child > div:first-child > div:first-child:after { content:"♟"; color:#fff0d3; }
+        .game-card .text-amber-400 { color:var(--sun)!important; }
+        .game-card .text-indigo-400 { color:var(--mint)!important; }
+        .game-card button { background:rgba(255,243,223,.1)!important; color:#f4d58f!important; }
+        #emptyState button { background:#f1b578!important; color:#2d2925!important; }
+        #gameOverlay { background:rgba(9,17,24,.96)!important; }
+        #gameOverlay > div:first-child { background:#152731!important; border-color:rgba(255,243,223,.12)!important; }
+        #gameOverlay button { border-radius:999px!important; }
+        #gameStage { background:radial-gradient(ellipse at center,rgba(40,74,79,.22),transparent 68%); }
+        footer { border-color:rgba(255,243,223,.1)!important; color:#94a59e!important; }
+        .arcade-hero { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); align-items:center; gap:24px; min-height:300px; margin:8px 0 24px; padding:clamp(24px,4vw,42px); overflow:hidden; position:relative; border:1px solid rgba(255,243,223,.16); border-radius:28px; background:linear-gradient(115deg,rgba(31,57,63,.98),rgba(37,63,66,.88) 55%,rgba(91,94,77,.72)); box-shadow:0 20px 55px rgba(4,12,17,.24); }
+        .arcade-hero:after { content:""; position:absolute; width:280px;height:280px;right:38%;top:-190px;border:1px solid rgba(255,243,223,.15);border-radius:50%;box-shadow:0 0 0 24px rgba(255,243,223,.025),0 0 0 48px rgba(255,243,223,.02);pointer-events:none; }
+        .hero-copy { position:relative; z-index:2; max-width:540px; }
+        .hero-eyebrow { display:inline-flex;align-items:center;gap:9px;color:#c3ddca;font-size:11px;font-weight:800;letter-spacing:.19em; }
+        .hero-eyebrow:before { content:""; width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 5px rgba(255,144,120,.14); }
+        .arcade-hero h1 { color:#fff3df;font-size:clamp(32px,5vw,54px);line-height:1.09;font-weight:900;letter-spacing:-.055em;margin:14px 0 12px; }
+        .arcade-hero h1 em { color:#ffc879;font-style:normal; }
+        .arcade-hero p { color:#d0ddd4;font-size:14px;line-height:1.8;max-width:39em;margin:0; }
+        .hero-actions { display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:22px; }
+        .hero-play { border:0;border-radius:999px;background:#f3be82;color:#302a24;padding:12px 19px;font-weight:800;cursor:pointer;box-shadow:0 9px 22px rgba(243,190,130,.18);transition:transform .2s,box-shadow .2s; }
+        .hero-play:hover { transform:translateY(-2px);box-shadow:0 13px 25px rgba(243,190,130,.28); }
+        .hero-note { font-size:11px;color:#c6d2cb; }
+        .hero-art { width:100%;max-width:440px;justify-self:end;filter:drop-shadow(0 17px 21px rgba(7,16,21,.16)); }
+        .how-to-play { display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 20px; }
+        .how-step { display:flex;align-items:center;gap:11px;padding:12px 15px;border:1px solid rgba(255,243,223,.1);border-radius:16px;background:rgba(255,243,223,.045); }
+        .how-step b { display:grid;place-items:center;width:27px;height:27px;border-radius:50%;flex:none;background:rgba(243,190,130,.16);color:#ffd292;font-size:12px; }
+        .how-step span { color:#c9d4ce;font-size:11px;line-height:1.4; }
+        @media(max-width:720px) { .arcade-hero{grid-template-columns:1fr;gap:16px;min-height:auto;padding:25px 22px}.hero-art{max-width:370px;justify-self:center;margin-top:0}.arcade-hero h1{font-size:38px}.how-to-play{grid-template-columns:1fr;gap:7px}.how-step{padding:9px 12px}.game-card{min-height:224px} }
+        html.embedded .arcade-hero, html.embedded .how-to-play { display:none!important; }
+        @media(prefers-reduced-motion:reduce) { *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important} }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
@@ -73,16 +136,16 @@
                 </div>
                 <div>
                     <span class="font-extrabold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-indigo-300">
-                        ARCADE HUB
+                        NGHĨA'S PLAYROOM
                     </span>
-                    <span class="text-xs text-indigo-400 block font-medium -mt-1">Natively Integrated Mini Games</span>
+                    <span class="text-xs text-indigo-400 block font-medium -mt-1">잠깐 쉬어 가는 작은 게임방</span>
                 </div>
             </div>
 
             <!-- Search Bar -->
             <div class="hidden md:flex flex-1 max-w-md relative">
                 <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                <input type="text" id="searchInput" placeholder="Search game, puzzle, chess..." 
+                <input type="text" id="searchInput" placeholder="게임 이름이나 종류 검색" 
                     class="w-full pl-10 pr-4 py-2 bg-slate-900/80 border border-slate-700/60 rounded-xl text-sm focus:outline-none focus:border-indigo-500 text-slate-200 placeholder-slate-500">
             </div>
 
@@ -90,7 +153,7 @@
             <div class="flex items-center gap-2">
                 <button id="favFilterBtn" onclick="toggleFavoritesFilter()" class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-amber-400 text-xs sm:text-sm font-semibold transition">
                     <i class="fa-solid fa-star text-amber-400"></i>
-                    <span class="hidden sm:inline">Favorites</span>
+                    <span class="hidden sm:inline">즐겨찾기</span>
                     <span id="favCount" class="bg-amber-400/20 text-amber-300 px-1.5 py-0.5 rounded-full text-xs font-bold">0</span>
                 </button>
             </div>
@@ -99,10 +162,44 @@
 
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-6 flex flex-col gap-6">
 
+        <section class="arcade-hero" aria-labelledby="arcadeTitle">
+            <div class="hero-copy">
+                <span class="hero-eyebrow">NGHĨA'S MINI ARCADE</span>
+                <h1 id="arcadeTitle">오늘은<br><em>어떤 게임?</em></h1>
+                <p>퍼즐 한 판, 리듬 한 곡. 마음에 드는 게임을 골라 가볍게 시작해 보세요. 점수와 즐겨찾기는 이 기기에 저장돼요.</p>
+                <div class="hero-actions">
+                    <button class="hero-play" onclick="launchGame('game2048')">오늘의 추천 · 2048 시작 <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    <span class="hero-note">⌁ 설치 없이 바로 플레이</span>
+                </div>
+            </div>
+            <svg class="hero-art" viewBox="0 0 520 300" role="img" aria-label="호수와 작은 게임 오두막이 있는 저녁 풍경">
+                <defs>
+                    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#f7c796"/><stop offset="1" stop-color="#de9d87"/></linearGradient>
+                    <linearGradient id="lake" x2="0" y2="1"><stop stop-color="#79aa9c"/><stop offset="1" stop-color="#3b6b70"/></linearGradient>
+                    <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#789580"/><stop offset="1" stop-color="#385d58"/></linearGradient>
+                </defs>
+                <rect x="8" y="14" width="504" height="270" rx="23" fill="url(#sky)"/>
+                <circle cx="401" cy="75" r="27" fill="#ffe3a8" opacity=".96"/>
+                <path d="M8 177 Q82 110 146 158 T278 145 T414 143 T512 116 V284 H8Z" fill="#819886"/>
+                <path d="M8 194 Q96 136 170 182 T311 164 T438 174 T512 153 V284 H8Z" fill="url(#hill)"/>
+                <path d="M8 208 Q96 177 173 202 Q245 228 319 199 Q410 163 512 198 V284 H8Z" fill="url(#lake)"/>
+                <path d="M30 229 Q117 211 178 226 M302 222 Q390 198 482 217 M90 254 Q157 240 210 252 M344 250 Q420 233 488 246" fill="none" stroke="#c4dfc3" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+                <path d="M81 206 V174 L117 151 L153 174 V208Z" fill="#f5d6ad"/><path d="M75 176 L117 145 L160 176Z" fill="#8f6357"/><rect x="108" y="180" width="18" height="28" rx="3" fill="#b97c68"/><rect x="88" y="181" width="13" height="13" rx="2" fill="#8caaa0"/><rect x="132" y="181" width="13" height="13" rx="2" fill="#8caaa0"/>
+                <path d="M54 210V190 M47 193q7-15 14 0 M173 207v-15 M167 195q6-13 12 0" stroke="#d8b57f" stroke-width="4" stroke-linecap="round"/>
+                <path d="M38 117h9m-4-4v9M300 65h8m-4-4v8M240 105h7m-3-3v7" stroke="#fff1d5" stroke-width="2" stroke-linecap="round" opacity=".85"/>
+                <path d="M8 266 Q89 259 156 266 T290 267 T420 262 T512 267 V284 H8Z" fill="#283e3c" opacity=".68"/>
+            </svg>
+        </section>
+        <div class="how-to-play" aria-label="게임 이용 방법">
+            <div class="how-step"><b>1</b><span><strong>골라요</strong><br>장르를 누르거나 검색</span></div>
+            <div class="how-step"><b>2</b><span><strong>즐겨요</strong><br>게임 카드를 눌러 바로 시작</span></div>
+            <div class="how-step"><b>3</b><span><strong>이어가요</strong><br>목록 버튼으로 돌아오고 최고 점수 확인</span></div>
+        </div>
+
         <!-- Search Bar (Mobile) -->
         <div class="md:hidden relative">
             <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-            <input type="text" id="searchInputMobile" placeholder="Search games..." 
+            <input type="text" id="searchInputMobile" placeholder="게임 이름이나 종류 검색" 
                 class="w-full pl-10 pr-4 py-2 bg-slate-900 border border-slate-700/60 rounded-xl text-sm focus:outline-none focus:border-indigo-500 text-slate-200">
         </div>
 
@@ -119,8 +216,8 @@
         <!-- Empty State -->
         <div id="emptyState" class="hidden flex-col items-center justify-center py-20 gap-3 text-center">
             <i class="fa-solid fa-ghost text-4xl text-slate-600"></i>
-            <p class="text-slate-400 font-medium">No games matched your filter.</p>
-            <button onclick="resetFilters()" class="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold hover:bg-indigo-500">Reset Filters</button>
+            <p class="text-slate-400 font-medium">검색 결과가 없어요. 다른 이름이나 장르를 골라 보세요.</p>
+            <button onclick="resetFilters()" class="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold hover:bg-indigo-500">필터 초기화</button>
         </div>
     </main>
 
@@ -129,7 +226,7 @@
         <div class="flex items-center justify-between px-4 sm:px-8 py-3 bg-slate-900 border-b border-slate-800">
             <div class="flex items-center gap-3">
                 <button onclick="closeGameOverlay()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold flex items-center gap-2">
-                    <i class="fa-solid fa-arrow-left"></i> Menu
+                    <i class="fa-solid fa-arrow-left"></i> 게임 목록
                 </button>
                 <div class="h-5 w-px bg-slate-700"></div>
                 <div class="flex items-center gap-2">
@@ -141,13 +238,13 @@
             <!-- Stats & Quick Actions -->
             <div class="flex items-center gap-3">
                 <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/50 text-xs">
-                    <span class="text-slate-400">High Score:</span>
+                    <span class="text-slate-400">최고 점수:</span>
                     <span id="overlayHighScore" class="font-bold text-amber-400">0</span>
                 </div>
-                <button id="restartBtn" onclick="restartCurrentGame()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white" title="Restart">
+                <button id="restartBtn" onclick="restartCurrentGame()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white" title="다시 시작" aria-label="다시 시작">
                     <i class="fa-solid fa-rotate-right text-sm"></i>
                 </button>
-                <button onclick="closeGameOverlay()" class="p-2 rounded-xl bg-rose-500/20 hover:bg-rose-500 text-rose-300 hover:text-white border border-rose-500/30" title="Close">
+                <button onclick="closeGameOverlay()" class="p-2 rounded-xl bg-rose-500/20 hover:bg-rose-500 text-rose-300 hover:text-white border border-rose-500/30" title="게임 닫기" aria-label="게임 닫기">
                     <i class="fa-solid fa-xmark text-sm"></i>
                 </button>
             </div>
@@ -160,87 +257,88 @@
     </div>
 
     <footer class="border-t border-slate-800 py-4 px-6 text-center text-xs text-slate-500 glass">
-        <p>© 2026 Arcade Hub. Built with pure JavaScript without external iFrames.</p>
+        <p>응이아의 작은 게임방 · 즐겨찾기와 최고 점수는 이 기기에 저장됩니다.</p>
     </footer>
 
     <script>
+        if (new URLSearchParams(location.search).has('embed')) document.documentElement.classList.add('embedded');
         // --- GAME CATALOG DEFINITION ---
         const GAMES = [
             {
                 id: 'game2048',
-                title: '2048 Puzzle',
+                title: '2048 퍼즐',
                 category: 'puzzle',
-                categoryName: 'Puzzle',
+                categoryName: '퍼즐',
                 icon: 'fa-cubes',
-                badge: 'Classic',
+                badge: '클래식',
                 color: 'from-amber-500/20 to-orange-600/20',
                 border: 'border-amber-500/40',
-                desc: 'Merge matching numbers to reach the legendary 2048 tile!'
+                desc: '같은 숫자를 합쳐 2048 타일에 도전해 보세요.'
             },
             {
                 id: 'gameRhythm',
-                title: 'Rhythm Piano',
+                title: '리듬 피아노',
                 category: 'rhythm',
-                categoryName: 'Rhythm',
+                categoryName: '리듬',
                 icon: 'fa-music',
-                badge: 'Arcade',
+                badge: '리듬 게임',
                 color: 'from-cyan-500/20 to-blue-600/20',
                 border: 'border-cyan-500/40',
-                desc: 'Tap key notes [A, S, D, F] in sync with falling tiles for huge combos!'
+                desc: 'A, S, D, F 키를 눌러 떨어지는 음표와 박자를 맞춰요.'
             },
             {
                 id: 'gameSolitaire',
-                title: 'Spider Solitaire',
+                title: '스파이더 카드',
                 category: 'card',
-                categoryName: 'Card',
+                categoryName: '카드',
                 icon: 'fa-spade',
-                badge: 'Popular',
+                badge: '차분하게',
                 color: 'from-emerald-500/20 to-teal-600/20',
                 border: 'border-emerald-500/40',
-                desc: 'Arrange cards from King down to Ace to clear the board.'
+                desc: '킹부터 에이스까지 카드를 차례로 정리해 보세요.'
             },
             {
                 id: 'gameBubble',
-                title: 'Bubble Shooter',
+                title: '버블 슈터',
                 category: 'casual',
-                categoryName: 'Casual',
+                categoryName: '캐주얼',
                 icon: 'fa-circle-dot',
-                badge: 'Addictive',
+                badge: '가볍게',
                 color: 'from-pink-500/20 to-rose-600/20',
                 border: 'border-pink-500/40',
-                desc: 'Aim and pop groups of 3 or more matching bubbles!'
+                desc: '같은 색 거품을 세 개 이상 모아 톡톡 터뜨려요.'
             },
             {
                 id: 'gameBlock',
-                title: 'Block Blast',
+                title: '블록 블래스트',
                 category: 'puzzle',
-                categoryName: 'Puzzle',
+                categoryName: '퍼즐',
                 icon: 'fa-shapes',
-                badge: 'Trending',
+                badge: '한 판 더',
                 color: 'from-indigo-500/20 to-violet-600/20',
                 border: 'border-indigo-500/40',
-                desc: 'Place shapes on the 8x8 grid and blast full rows or columns.'
+                desc: '8×8 보드에 블록을 놓아 줄을 완성해 보세요.'
             },
             {
                 id: 'gameChess',
-                title: 'Chess vs AI',
+                title: 'AI 체스',
                 category: 'board',
-                categoryName: 'Board',
+                categoryName: '보드게임',
                 icon: 'fa-chess-king',
-                badge: 'Strategy',
+                badge: '두뇌 대결',
                 color: 'from-purple-500/20 to-slate-700/20',
                 border: 'border-purple-500/40',
-                desc: 'Outsmart the AI opponent in classic tactical chess.'
+                desc: '인공지능과 수를 겨루며 체크메이트를 노려요.'
             }
         ];
 
         const CATEGORIES = [
-            { id: 'all', name: 'All Games', icon: 'fa-border-all' },
-            { id: 'puzzle', name: 'Puzzle', icon: 'fa-cubes' },
-            { id: 'rhythm', name: 'Rhythm', icon: 'fa-music' },
-            { id: 'card', name: 'Card', icon: 'fa-spade' },
-            { id: 'casual', name: 'Casual', icon: 'fa-gamepad' },
-            { id: 'board', name: 'Board', icon: 'fa-chess' }
+            { id: 'all', name: '전체 게임', icon: 'fa-border-all' },
+            { id: 'puzzle', name: '퍼즐', icon: 'fa-cubes' },
+            { id: 'rhythm', name: '리듬', icon: 'fa-music' },
+            { id: 'card', name: '카드', icon: 'fa-spade' },
+            { id: 'casual', name: '캐주얼', icon: 'fa-gamepad' },
+            { id: 'board', name: '보드게임', icon: 'fa-chess' }
         ];
 
         // --- GLOBAL STATE ---
@@ -382,8 +480,8 @@
                             <p class="text-xs text-slate-400 leading-relaxed mb-4">${game.desc}</p>
                         </div>
                         <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                            <span class="text-slate-500 font-medium">Top Score: <strong class="text-amber-400">${topScore}</strong></span>
-                            <span class="text-indigo-400 font-bold flex items-center gap-1">PLAY <i class="fa-solid fa-play text-[10px]"></i></span>
+                            <span class="text-slate-500 font-medium">최고 점수 <strong class="text-amber-400">${topScore}</strong></span>
+                            <span class="text-indigo-400 font-bold flex items-center gap-1">플레이 <i class="fa-solid fa-play text-[10px]"></i></span>
                         </div>
                     </div>
                 `;
