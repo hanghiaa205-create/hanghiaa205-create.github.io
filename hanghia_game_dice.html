@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>응이아의 작은 게임방</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응이아의 게임 아케이드</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -124,6 +124,39 @@
         @media(max-width:720px) { .arcade-hero{grid-template-columns:1fr;gap:16px;min-height:auto;padding:25px 22px}.hero-art{max-width:370px;justify-self:center;margin-top:0}.arcade-hero h1{font-size:38px}.how-to-play{grid-template-columns:1fr;gap:7px}.how-step{padding:9px 12px}.game-card{min-height:224px} }
         html.embedded .arcade-hero, html.embedded .how-to-play { display:none!important; }
         @media(prefers-reduced-motion:reduce) { *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important} }
+        /* Professional arcade palette */
+        :root { color-scheme:dark; --night:#0d1420; --cream:#f3f6f8; --mint:#b5ef68; --sun:#b5ef68; --coral:#8fd9e8; }
+        body { background:radial-gradient(ellipse at 14% 0%,rgba(46,85,105,.18),transparent 32%),#0d1420;color:#f3f6f8; }
+        .glass,header.glass { background:rgba(15,24,37,.92);border-color:rgba(196,215,229,.12);box-shadow:0 10px 32px rgba(0,0,0,.2); }
+        header .bg-gradient-to-tr { background-image:linear-gradient(145deg,#b5ef68,#70bfba)!important;box-shadow:0 8px 22px rgba(181,239,104,.15)!important; }
+        header .bg-gradient-to-r { background-image:linear-gradient(90deg,#f3f6f8,#b5ef68)!important; }
+        header .text-indigo-400,.game-card .text-indigo-400 { color:#8fd9e8!important; }
+        #categoryNav button.bg-indigo-600 { background:#b5ef68!important;color:#152018!important;box-shadow:0 8px 20px rgba(181,239,104,.16)!important; }
+        #categoryNav button:not(.bg-indigo-600) { background:rgba(220,235,245,.045)!important;color:#b8c5d1!important;border-color:rgba(220,235,245,.12)!important; }
+        #favFilterBtn { background:rgba(220,235,245,.055)!important;border-color:rgba(220,235,245,.12)!important;color:#d5dfe7!important; }
+        .game-card { min-height:245px;padding:18px!important;border-radius:16px!important;background:linear-gradient(155deg,#192638,#121d2b)!important;border-color:rgba(210,228,240,.1)!important;box-shadow:0 12px 28px rgba(0,0,0,.18); }
+        .game-card:hover { transform:translateY(-4px);border-color:rgba(181,239,104,.4)!important;box-shadow:0 18px 38px rgba(0,0,0,.3),0 0 0 1px rgba(181,239,104,.08); }
+        .game-card h3 { color:#f3f6f8!important; }.game-card p { color:#a9b8c6!important; }
+        .game-card > div:first-child > div:first-child > div:first-child { border-radius:10px;border-color:rgba(210,228,240,.12)!important; }
+        .game-card:nth-child(1) > div:first-child > div:first-child > div:first-child:before { background:radial-gradient(circle at 72% 22%,#b5ef68 0 7%,transparent 8%),linear-gradient(155deg,#234b54 0 48%,#1c3747 49% 62%,#29402e 63%); }
+        .game-card:nth-child(2) > div:first-child > div:first-child > div:first-child:before { background:linear-gradient(135deg,#403a62,#275166 55%,#326274); }
+        .game-card:nth-child(3) > div:first-child > div:first-child > div:first-child:before { background:linear-gradient(135deg,#334d46,#233d43 50%,#172839); }
+        .game-card:nth-child(4) > div:first-child > div:first-child > div:first-child:before { background:linear-gradient(135deg,#613d4b,#354568 55%,#202c47); }
+        .game-card:nth-child(5) > div:first-child > div:first-child > div:first-child:before { background:linear-gradient(145deg,#285262,#294b68 48%,#353c68); }
+        .game-card:nth-child(6) > div:first-child > div:first-child > div:first-child:before { background:linear-gradient(145deg,#4a455b,#334e57 52%,#29443d); }
+        .game-card .text-amber-400 { color:#b5ef68!important; }.game-card button { background:rgba(220,235,245,.1)!important;color:#b5ef68!important; }
+        #emptyState button { background:#b5ef68!important;color:#152018!important; }
+        #gameOverlay { background:rgba(7,12,20,.97)!important; }#gameOverlay > div:first-child { background:#131f2e!important;border-color:rgba(210,228,240,.12)!important; }
+        #gameStage { background:radial-gradient(ellipse at center,rgba(40,74,94,.2),transparent 68%); }
+        .arcade-hero { border-color:rgba(210,228,240,.12);border-radius:20px;background:linear-gradient(115deg,#142238,#182b3b 58%,#203545);box-shadow:0 20px 55px rgba(0,0,0,.24); }
+        .hero-eyebrow { color:#aec3cf; }.hero-eyebrow:before { background:#b5ef68;box-shadow:0 0 0 5px rgba(181,239,104,.12); }
+        .arcade-hero h1 { color:#f3f6f8; }.arcade-hero h1 em { color:#b5ef68; }.arcade-hero p { color:#b8c6d1; }
+        .hero-play { border-radius:7px;background:#b5ef68;color:#152018;box-shadow:0 9px 22px rgba(181,239,104,.14); }.hero-play:hover { box-shadow:0 13px 25px rgba(181,239,104,.2); }
+        .how-step { border-color:rgba(210,228,240,.1);border-radius:10px;background:rgba(220,235,245,.035); }.how-step b { border-radius:8px;background:rgba(181,239,104,.12);color:#b5ef68; }.how-step span { color:#bac8d3; }
+        footer { border-color:rgba(210,228,240,.1)!important;color:#8799a8!important; }
+        /* Bright, distinct colorways for every game in the arcade. */
+        .game-card:nth-child(1){background:linear-gradient(145deg,#352410,#20283b)!important}.game-card:nth-child(2){background:linear-gradient(145deg,#29204c,#173b50)!important}.game-card:nth-child(3){background:linear-gradient(145deg,#123c32,#173348)!important}.game-card:nth-child(4){background:linear-gradient(145deg,#522039,#302153)!important}.game-card:nth-child(5){background:linear-gradient(145deg,#123f55,#28205a)!important}.game-card:nth-child(6){background:linear-gradient(145deg,#453015,#263752)!important}.game-card:nth-child(7){background:linear-gradient(145deg,#702b35,#5a3b15)!important}.game-card:nth-child(8){background:linear-gradient(145deg,#1d573c,#164e62)!important}
+        .game-card:nth-child(1)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 72% 22%,#fff36b 0 7%,transparent 8%),linear-gradient(155deg,#6ee7b7 0 48%,#3b82f6 49% 62%,#f59e0b 63%)}.game-card:nth-child(2)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(135deg,#c084fc,#22d3ee 55%,#2563eb)}.game-card:nth-child(3)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(135deg,#4ade80,#14b8a6 50%,#166534)}.game-card:nth-child(4)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(135deg,#fb7185,#c026d3 55%,#7c3aed)}.game-card:nth-child(5)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(145deg,#22d3ee,#3b82f6 48%,#8b5cf6)}.game-card:nth-child(6)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(145deg,#facc15,#f97316 52%,#a855f7)}.game-card:nth-child(7)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 75% 20%,#fde047 0 8%,transparent 9%),linear-gradient(145deg,#ef4444,#f97316 50%,#22c55e)}.game-card:nth-child(8)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 25% 25%,#fff 0 5%,transparent 6%),linear-gradient(145deg,#84cc16,#2dd4bf 52%,#3b82f6)}
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
@@ -136,9 +169,9 @@
                 </div>
                 <div>
                     <span class="font-extrabold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-indigo-300">
-                        NGHĨA'S PLAYROOM
+                        NGHĨA'S ARCADE
                     </span>
-                    <span class="text-xs text-indigo-400 block font-medium -mt-1">잠깐 쉬어 가는 작은 게임방</span>
+                    <span class="text-xs text-indigo-400 block font-medium -mt-1">퍼즐 · 리듬 · 카드 · 보드</span>
                 </div>
             </div>
 
@@ -164,11 +197,11 @@
 
         <section class="arcade-hero" aria-labelledby="arcadeTitle">
             <div class="hero-copy">
-                <span class="hero-eyebrow">NGHĨA'S MINI ARCADE</span>
-                <h1 id="arcadeTitle">오늘은<br><em>어떤 게임?</em></h1>
-                <p>퍼즐 한 판, 리듬 한 곡. 마음에 드는 게임을 골라 가볍게 시작해 보세요. 점수와 즐겨찾기는 이 기기에 저장돼요.</p>
+                <span class="hero-eyebrow">NGHĨA'S BROWSER ARCADE</span>
+                <h1 id="arcadeTitle">플레이를<br><em>시작하세요</em></h1>
+                <p>퍼즐, 리듬, 카드와 보드게임을 한곳에서 즐겨 보세요. 기록과 즐겨찾기는 이 기기에 저장됩니다.</p>
                 <div class="hero-actions">
-                    <button class="hero-play" onclick="launchGame('game2048')">오늘의 추천 · 2048 시작 <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    <button class="hero-play" onclick="launchGame('game2048')">추천 게임 · 2048 시작 <i class="fa-solid fa-arrow-right ml-1"></i></button>
                     <span class="hero-note">⌁ 설치 없이 바로 플레이</span>
                 </div>
             </div>
@@ -257,7 +290,7 @@
     </div>
 
     <footer class="border-t border-slate-800 py-4 px-6 text-center text-xs text-slate-500 glass">
-        <p>응이아의 작은 게임방 · 즐겨찾기와 최고 점수는 이 기기에 저장됩니다.</p>
+        <p>응이아의 게임 아케이드 · 즐겨찾기와 최고 점수는 이 기기에 저장됩니다.</p>
     </footer>
 
     <script>
@@ -270,10 +303,10 @@
                 category: 'puzzle',
                 categoryName: '퍼즐',
                 icon: 'fa-cubes',
-                badge: '클래식',
+                badge: '전략 · 챌린지',
                 color: 'from-amber-500/20 to-orange-600/20',
                 border: 'border-amber-500/40',
-                desc: '같은 숫자를 합쳐 2048 타일에 도전해 보세요.'
+                desc: '목표 난이도를 선택하고, 한 수 되돌리기를 활용해 기록에 도전하세요.'
             },
             {
                 id: 'gameRhythm',
@@ -329,6 +362,16 @@
                 color: 'from-purple-500/20 to-slate-700/20',
                 border: 'border-purple-500/40',
                 desc: '인공지능과 수를 겨루며 체크메이트를 노려요.'
+            },
+            {
+                id: 'gameMario', title: '슈퍼 마리오 브라더스', category: 'casual', categoryName: '캐주얼',
+                icon: 'fa-person-running', badge: '플랫폼 · 모험', color: 'from-red-500/30 to-yellow-400/30', border: 'border-red-400/50',
+                desc: '달리고 점프하며 코인을 모으는 레트로 횡스크롤 모험!'
+            },
+            {
+                id: 'gameOnet', title: '클래식 동물 연결', category: 'puzzle', categoryName: '퍼즐',
+                icon: 'fa-paw', badge: '동물 · 매칭', color: 'from-lime-400/30 to-cyan-400/30', border: 'border-lime-300/50',
+                desc: '같은 동물 타일을 두 번 이하로 꺾이는 길로 연결해요.'
             }
         ];
 
@@ -518,8 +561,14 @@
                 case 'gameBubble': activeCleanup = initBubbleShooter(stage); break;
                 case 'gameBlock': activeCleanup = initBlockBlast(stage); break;
                 case 'gameChess': activeCleanup = initChess(stage); break;
+                case 'gameMario': activeCleanup = initMario(stage); break;
+                case 'gameOnet': activeCleanup = initOnet(stage); break;
             }
         }
+
+        window.addEventListener('message', event => {
+            if (event.source === window.parent && event.data?.type === 'nghia-launch-game') launchGame(event.data.id);
+        });
 
         function saveHighScore(gameId, score) {
             if (!highScores[gameId] || score > highScores[gameId]) {
@@ -547,20 +596,30 @@
         }
 
         function init2048(container) {
-            let board = Array(16).fill(0);
-            let score = 0;
-
+            let board = Array(16).fill(0), score = 0, moves = 0, bestTile = 0;
+            let previous = null, won = false, ended = false;
             container.innerHTML = `
-                <div class="flex flex-col items-center gap-4 max-w-sm w-full">
-                    <div class="flex items-center justify-between w-full px-2">
-                        <div class="text-sm font-semibold text-slate-400">Score: <span id="s2048" class="text-xl font-bold text-amber-400">0</span></div>
-                        <div class="text-xs text-slate-500">Use Arrow Keys or Swipe</div>
+                <div class="w-full max-w-xl mx-auto flex flex-col gap-4">
+                    <div class="flex flex-wrap items-end justify-between gap-3">
+                        <div><div class="text-[10px] font-bold tracking-[.2em] text-slate-400">CLASSIC · STRATEGY PUZZLE</div><h3 class="text-2xl font-extrabold text-white mt-1">2048 <span class="text-sm font-semibold text-slate-400">/ 숫자를 합쳐 목표 타일을 만드세요</span></h3></div>
+                        <label class="text-xs text-slate-400 flex items-center gap-2">목표 <select id="goal2048" class="rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-2 text-white"><option value="512">512 · 라이트</option><option value="1024">1024 · 클래식</option><option value="2048" selected>2048 · 챌린지</option><option value="4096">4096 · 익스트림</option></select></label>
                     </div>
-                    <div id="grid2048" class="grid grid-cols-4 gap-3 bg-slate-900 p-3 rounded-2xl border border-slate-800 w-full aspect-square relative">
-                        ${Array(16).fill(0).map((_, i) => `<div class="bg-slate-800/60 rounded-xl flex items-center justify-center font-extrabold text-xl sm:text-2xl transition-all duration-100" id="tile2048-${i}"></div>`).join('')}
+                    <div class="grid grid-cols-3 gap-2 sm:gap-3">
+                        <div class="rounded-xl border border-slate-700/80 bg-slate-900/80 px-3 py-2"><div class="text-[10px] tracking-wider text-slate-400">현재 점수</div><b id="s2048" class="text-xl text-lime-300">0</b></div>
+                        <div class="rounded-xl border border-slate-700/80 bg-slate-900/80 px-3 py-2"><div class="text-[10px] tracking-wider text-slate-400">최고 점수</div><b id="best2048" class="text-xl text-white">0</b></div>
+                        <div class="rounded-xl border border-slate-700/80 bg-slate-900/80 px-3 py-2"><div class="text-[10px] tracking-wider text-slate-400">이동 / 최고 타일</div><b id="moves2048" class="text-xl text-white">0 / 0</b></div>
                     </div>
+                    <div class="flex items-center justify-between gap-2"><p id="status2048" aria-live="polite" class="text-xs text-slate-400">방향키 또는 보드를 밀어 타일을 이동하세요.</p><div class="flex gap-2"><button id="undo2048" class="rounded-lg border border-slate-700 px-3 py-2 text-xs font-bold text-slate-300 disabled:opacity-40">되돌리기</button><button id="new2048" class="rounded-lg bg-lime-300 px-3 py-2 text-xs font-extrabold text-slate-950">새 게임</button></div></div>
+                    <div id="grid2048" role="grid" aria-label="2048 게임 보드" class="grid grid-cols-4 gap-2 sm:gap-3 bg-slate-950/80 p-2.5 sm:p-3 rounded-2xl border border-slate-700 w-full aspect-square shadow-2xl shadow-black/30">
+                        ${Array(16).fill(0).map((_, i) => `<div role="gridcell" aria-label="빈 칸" class="rounded-lg sm:rounded-xl flex items-center justify-center font-extrabold text-xl sm:text-3xl transition-all duration-100" id="tile2048-${i}"></div>`).join('')}
+                    </div>
+                    <div class="flex items-center justify-between text-[10px] uppercase tracking-widest text-slate-500"><span>Swipe · Arrow Keys</span><span>One move can change everything</span></div>
                 </div>
             `;
+            const goalEl = document.getElementById('goal2048');
+            goalEl.addEventListener('change', () => { won = board.some(v => v >= Number(goalEl.value)); ended = false; updateUI(); });
+            document.getElementById('undo2048').addEventListener('click', undo);
+            document.getElementById('new2048').addEventListener('click', newGame);
 
             function spawn() {
                 let empty = board.map((v, i) => v === 0 ? i : null).filter(v => v !== null);
@@ -590,11 +649,21 @@
                     const el = document.getElementById(`tile2048-${i}`);
                     const val = board[i];
                     el.innerText = val > 0 ? val : '';
-                    el.className = `rounded-xl flex items-center justify-center font-extrabold text-xl sm:text-2xl transition-all duration-100 ${colors[val] || 'bg-indigo-600 text-white'}`;
+                    el.setAttribute('aria-label', val ? `${val} 타일` : '빈 칸');
+                    el.className = `rounded-lg sm:rounded-xl flex items-center justify-center font-extrabold ${val >= 1024 ? 'text-base sm:text-2xl' : 'text-xl sm:text-3xl'} transition-all duration-100 ${colors[val] || (val ? 'bg-cyan-700 text-white' : 'bg-slate-800/70 text-transparent')}`;
                 }
                 document.getElementById('s2048').innerText = score;
+                document.getElementById('best2048').innerText = Math.max(score, highScores.game2048 || 0);
+                document.getElementById('moves2048').innerText = `${moves} / ${bestTile}`;
+                document.getElementById('undo2048').disabled = !previous;
+                const status = document.getElementById('status2048');
+                status.innerText = ended ? '더 움직일 수 없습니다. 새 게임으로 다시 도전하세요.' : won ? `목표 ${goalEl.value} 달성! 계속 플레이하거나 새 게임을 시작하세요.` : `목표 타일 ${goalEl.value} · 숫자를 합쳐 공간을 확보하세요.`;
                 saveHighScore('game2048', score);
             }
+
+            function newGame() { board = Array(16).fill(0); score = 0; moves = 0; bestTile = 0; previous = null; won = false; ended = false; spawn(); spawn(); updateUI(); }
+            function undo() { if (!previous) return; ({ board, score, moves, bestTile, won, ended } = previous); previous = null; updateUI(); }
+            function hasMoves() { return board.some(v => v === 0) || board.some((v, i) => i % 4 < 3 && v === board[i + 1] || i < 12 && v === board[i + 4]); }
 
             function slide(row) {
                 let arr = row.filter(val => val);
@@ -638,14 +707,22 @@
             }
 
             function handleKey(e) {
+                if (e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return;
+                if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) e.preventDefault();
+                const before = { board: board.slice(), score, moves, bestTile, won, ended };
                 let moved = false;
                 if (e.key === 'ArrowLeft') { moved = moveLeft(); }
                 else if (e.key === 'ArrowRight') { rotate(); rotate(); moved = moveLeft(); rotate(); rotate(); }
                 else if (e.key === 'ArrowUp') { rotate(); rotate(); rotate(); moved = moveLeft(); rotate(); }
                 else if (e.key === 'ArrowDown') { rotate(); moved = moveLeft(); rotate(); rotate(); rotate(); }
 
-                if (moved) {
+                if (moved && !ended) {
+                    previous = before;
+                    moves++;
                     spawn();
+                    bestTile = Math.max(bestTile, ...board);
+                    if (!won && board.some(v => v >= Number(goalEl.value))) won = true;
+                    ended = !hasMoves();
                     updateUI();
                 }
             }
@@ -658,6 +735,7 @@
             };
             const touchEnd = (e) => {
                 if(!startX || !startY) return;
+                const before = { board: board.slice(), score, moves, bestTile, won, ended };
                 let diffX = e.changedTouches[0].clientX - startX;
                 let diffY = e.changedTouches[0].clientY - startY;
                 let moved = false;
@@ -669,7 +747,7 @@
                     if (diffY > 30) { rotate(); moved = moveLeft(); rotate(); rotate(); rotate(); }
                     else if (diffY < -30) { rotate(); rotate(); rotate(); moved = moveLeft(); rotate(); }
                 }
-                if (moved) { spawn(); updateUI(); }
+                if (moved && !ended) { previous = before; moves++; spawn(); bestTile = Math.max(bestTile, ...board); if (!won && board.some(v => v >= Number(goalEl.value))) won = true; ended = !hasMoves(); updateUI(); }
             };
 
             window.addEventListener('keydown', handleKey);
@@ -677,7 +755,7 @@
             gridEl.addEventListener('touchstart', touchStart);
             gridEl.addEventListener('touchend', touchEnd);
 
-            spawn(); spawn(); updateUI();
+            newGame();
 
             return () => {
                 window.removeEventListener('keydown', handleKey);
@@ -1185,6 +1263,36 @@
             render();
             return () => {};
         }
+        function initOnet(container) {
+            const animals = ['🐶','🐱','🐰','🦊','🐼','🐸','🐵','🐯','🐨','🐷','🦁','🐮'];
+            let board = [], selected = null, score = 0, locked = false, left = 0;
+            const wrap = document.createElement('div'); wrap.style.cssText='width:min(100%,760px);padding:16px;border-radius:22px;background:linear-gradient(145deg,#dcfce7,#dbeafe);color:#17324a;box-shadow:0 22px 55px #0005';
+            wrap.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px"><b style="font-size:20px">🐾 동물 짝을 찾아요</b><span id="onetInfo">같은 동물을 연결하세요</span><button id="onetShuffle" style="padding:8px 13px;border:0;border-radius:12px;background:#2563eb;color:white;font-weight:bold;cursor:pointer">섞기</button></div><div id="onetBoard" style="display:grid;grid-template-columns:repeat(8,minmax(30px,1fr));gap:5px"></div><p style="margin:12px 0 0;font-size:13px">길은 타일 사이 빈칸으로 최대 두 번 꺾을 수 있어요. 점수: <b id="onetScore">0</b></p>';
+            container.appendChild(wrap);
+            const grid=wrap.querySelector('#onetBoard'), info=wrap.querySelector('#onetInfo'), scoreEl=wrap.querySelector('#onetScore');
+            function fresh(){const pairs=Array.from({length:24},(_,i)=>animals[i%animals.length]);pairs.sort(()=>Math.random()-.5);board=Array.from({length:6},(_,r)=>pairs.slice(r*8,r*8+8));left=48;selected=null;score=0;draw()}
+            function draw(){grid.innerHTML='';board.forEach((row,r)=>row.forEach((v,c)=>{const b=document.createElement('button');b.textContent=v||'';b.setAttribute('aria-label',v?`${v}, 행 ${r+1} 열 ${c+1}`:'빈칸');b.style.cssText=`aspect-ratio:1;border:2px solid ${selected&&selected.r===r&&selected.c===c?'#f97316':'#ffffffcc'};border-radius:11px;background:${v?'linear-gradient(145deg,#fff,#dbeafe)':'transparent'};font-size:clamp(17px,4vw,31px);cursor:${v?'pointer':'default'};box-shadow:${v?'0 3px 7px #31547a22':'none'}`;b.onclick=()=>pick(r,c);grid.appendChild(b)}));scoreEl.textContent=score;info.textContent=left?`남은 타일 ${left}쌍`:'완료! 모든 짝을 찾았어요 🎉'}
+            function pathExists(a,b){const R=8,C=10,ext=Array.from({length:R},()=>Array(C).fill(0));for(let r=0;r<6;r++)for(let c=0;c<8;c++)ext[r+1][c+1]=board[r][c]?1:0;const start=[a.r+1,a.c+1],end=[b.r+1,b.c+1],q=[[...start,0]],seen=new Map([[`${start[0]},${start[1]},4`,0]]);while(q.length){const [r,c,d,t]=q.shift();if(r===end[0]&&c===end[1])return true;for(let nd=0;nd<4;nd++){const nr=r+[0,1,0,-1][nd],nc=c+[1,0,-1,0][nd],nt=t+(d===4||d===nd?0:1);if(nt>2||nr<0||nr>=R||nc<0||nc>=C||((nr!==end[0]||nc!==end[1])&&ext[nr][nc]))continue;const k=`${nr},${nc},${nd}`;if(!seen.has(k)||seen.get(k)>nt){seen.set(k,nt);q.push([nr,nc,nd,nt])}}}return false}
+            function pick(r,c){if(locked||!board[r][c])return;if(!selected){selected={r,c};draw();return}if(selected.r===r&&selected.c===c){selected=null;draw();return}if(board[selected.r][selected.c]===board[r][c]&&pathExists(selected,{r,c})){board[selected.r][selected.c]=board[r][c]='';score+=100;left-=2;selected=null;saveHighScore('gameOnet',score);locked=true;draw();setTimeout(()=>{locked=false;draw()},180)}else{selected={r,c};draw()}}
+            wrap.querySelector('#onetShuffle').onclick=()=>{const vals=board.flat().filter(Boolean).sort(()=>Math.random()-.5);let i=0;board=board.map(row=>row.map(v=>v?vals[i++]:''));selected=null;draw()};fresh();return ()=>{};
+        }
+
+        function initMario(container) {
+            const wrap=document.createElement('div');wrap.style.cssText='width:min(100%,900px);padding:14px;border-radius:22px;background:linear-gradient(150deg,#fde68a,#fb7185 50%,#818cf8);box-shadow:0 20px 50px #0006;color:#fff';
+            wrap.innerHTML='<div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;padding:0 4px 10px"><b style="font-size:20px;text-shadow:0 2px 4px #713f12">🍄 슈퍼 마리오 브라더스</b><span id="marioStatus">← → 이동 · Space 점프</span><button id="marioRestart" style="border:0;border-radius:10px;padding:8px 12px;background:#fff;color:#be123c;font-weight:bold;cursor:pointer">다시 시작</button></div><canvas width="800" height="400" aria-label="마리오 플랫폼 게임" style="display:block;width:100%;border-radius:15px;background:#7dd3fc;image-rendering:pixelated;touch-action:none"></canvas><div style="display:flex;justify-content:center;gap:16px;padding-top:10px"><button data-key="ArrowLeft">◀</button><button data-key="Space">⬆ 점프</button><button data-key="ArrowRight">▶</button></div>';
+            container.appendChild(wrap);const canvas=wrap.querySelector('canvas'),ctx=canvas.getContext('2d'),status=wrap.querySelector('#marioStatus'),keys={};let raf=0,alive=true,score=0,cam=0,player,coins,foes;
+            function reset(){score=0;cam=0;player={x:60,y:290,vx:0,vy:0,w:28,h:38,ground:false};coins=Array.from({length:17},(_,i)=>({x:240+i*145,y:210-(i%3)*36,taken:false}));foes=Array.from({length:8},(_,i)=>({x:410+i*290,y:322,dir:i%2?1:-1,alive:true}));status.textContent='← → 이동 · Space 점프 · 코인 0'}
+            function keydown(e){if(['ArrowLeft','ArrowRight','Space'].includes(e.code)){e.preventDefault();keys[e.code]=true}}function keyup(e){keys[e.code]=false}
+            window.addEventListener('keydown',keydown);window.addEventListener('keyup',keyup);
+            wrap.querySelectorAll('[data-key]').forEach(b=>{const k=b.dataset.key;b.style.cssText='border:0;border-radius:14px;padding:10px 18px;background:#ffffffdd;color:#1e293b;font-weight:bold;font-size:17px;touch-action:none';b.onpointerdown=e=>{e.preventDefault();keys[k]=true};for(const ev of ['pointerup','pointerleave','pointercancel'])b.addEventListener(ev,()=>keys[k]=false)});
+            function draw(){if(!alive)return;ctx.clearRect(0,0,800,400);const sky=ctx.createLinearGradient(0,0,0,400);sky.addColorStop(0,'#38bdf8');sky.addColorStop(1,'#d9f99d');ctx.fillStyle=sky;ctx.fillRect(0,0,800,400);ctx.fillStyle='#ffffffaa';for(let i=0;i<7;i++){let x=((i*170-cam*.25)%1000+1000)%1000-100;ctx.beginPath();ctx.ellipse(x,80+i%3*28,34,13,0,0,7);ctx.ellipse(x+24,78+i%3*28,24,17,0,0,7);ctx.fill()}ctx.fillStyle='#4ade80';ctx.fillRect(0,350,800,50);ctx.fillStyle='#92400e';ctx.fillRect(0,372,800,28);for(let x=-(cam%180);x<800;x+=180){ctx.fillStyle='#16a34a';ctx.fillRect(x,348,90,12);ctx.fillStyle='#fbbf24';ctx.fillRect(x+100,350,24,24);ctx.fillRect(x+118,350,24,24)}
+                ctx.fillStyle='#b45309';for(let x of [280,490,690,1000,1300,1620,1940,2250]){let sx=x-cam;if(sx>-40&&sx<810){ctx.fillRect(sx,270,42,18);ctx.fillStyle='#facc15';ctx.fillRect(sx+12,272,18,14);ctx.fillStyle='#b45309'}}
+                coins.forEach(c=>{if(!c.taken){const x=c.x-cam;if(x>-20&&x<820){ctx.fillStyle='#facc15';ctx.beginPath();ctx.ellipse(x,c.y,9,13,0,0,7);ctx.fill();ctx.fillStyle='#fff7ae';ctx.fillRect(x-2,c.y-8,3,16)}}});foes.forEach(f=>{const x=f.x-cam;if(f.alive&&x>-50&&x<850){ctx.fillStyle='#9a3412';ctx.beginPath();ctx.ellipse(x,f.y,17,15,0,0,7);ctx.fill();ctx.fillStyle='white';ctx.fillRect(x-8,f.y-7,5,7);ctx.fillRect(x+3,f.y-7,5,7);ctx.fillStyle='#1f2937';ctx.fillRect(x-8,f.y-5,3,4);ctx.fillRect(x+3,f.y-5,3,4)}});
+                let sx=player.x-cam;ctx.fillStyle='#dc2626';ctx.fillRect(sx-3,player.y-5,34,10);ctx.fillRect(sx+3,player.y-11,22,10);ctx.fillStyle='#fca5a5';ctx.fillRect(sx+7,player.y+4,16,12);ctx.fillStyle='#2563eb';ctx.fillRect(sx,player.y+15,28,17);ctx.fillStyle='#1e3a8a';ctx.fillRect(sx+2,player.y+30,10,8);ctx.fillRect(sx+18,player.y+30,10,8);ctx.fillStyle='white';ctx.fillRect(sx+18,player.y+1,4,5);ctx.fillStyle='#172554';ctx.fillRect(sx+20,player.y+2,2,3);requestAnimationFrame(draw)}
+            function tick(){if(!alive)return;player.vx=(keys.ArrowRight?3.4:0)-(keys.ArrowLeft?3.4:0);if((keys.Space||keys.ArrowUp)&&player.ground){player.vy=-11;player.ground=false}player.vy=Math.min(player.vy+.52,12);player.x=Math.max(0,Math.min(2400,player.x+player.vx));player.y+=player.vy;if(player.y+player.h>=350){player.y=350-player.h;player.vy=0;player.ground=true}cam=Math.max(0,Math.min(1600,player.x-240));coins.forEach(c=>{if(!c.taken&&Math.abs(c.x-player.x-14)<22&&Math.abs(c.y-player.y-18)<30){c.taken=true;score++;saveHighScore('gameMario',score);status.textContent=`← → 이동 · Space 점프 · 코인 ${score}`}});foes.forEach(f=>{if(!f.alive)return;f.x+=f.dir*1.1;if(f.x<350||f.x>2360)f.dir*=-1;if(Math.abs(f.x-player.x)<27&&Math.abs(f.y-(player.y+player.h))<30){if(player.vy>1){f.alive=false;player.vy=-7}else{player.x=60;player.y=290;player.vy=0}}});if(player.x>2380){status.textContent=`🏁 도착! 코인 ${score}개`;player.x=2380}raf=requestAnimationFrame(tick)}
+            wrap.querySelector('#marioRestart').onclick=reset;reset();draw();tick();return()=>{alive=false;cancelAnimationFrame(raf);window.removeEventListener('keydown',keydown);window.removeEventListener('keyup',keyup)};
+        }
     </script>
 </body>
 </html>
+
