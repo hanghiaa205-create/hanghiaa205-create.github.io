@@ -157,6 +157,9 @@
         /* Bright, distinct colorways for every game in the arcade. */
         .game-card:nth-child(1){background:linear-gradient(145deg,#352410,#20283b)!important}.game-card:nth-child(2){background:linear-gradient(145deg,#29204c,#173b50)!important}.game-card:nth-child(3){background:linear-gradient(145deg,#123c32,#173348)!important}.game-card:nth-child(4){background:linear-gradient(145deg,#522039,#302153)!important}.game-card:nth-child(5){background:linear-gradient(145deg,#123f55,#28205a)!important}.game-card:nth-child(6){background:linear-gradient(145deg,#453015,#263752)!important}.game-card:nth-child(7){background:linear-gradient(145deg,#702b35,#5a3b15)!important}.game-card:nth-child(8){background:linear-gradient(145deg,#1d573c,#164e62)!important}
         .game-card:nth-child(1)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 72% 22%,#fff36b 0 7%,transparent 8%),linear-gradient(155deg,#6ee7b7 0 48%,#3b82f6 49% 62%,#f59e0b 63%)}.game-card:nth-child(2)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(135deg,#c084fc,#22d3ee 55%,#2563eb)}.game-card:nth-child(3)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(135deg,#4ade80,#14b8a6 50%,#166534)}.game-card:nth-child(4)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(135deg,#fb7185,#c026d3 55%,#7c3aed)}.game-card:nth-child(5)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(145deg,#22d3ee,#3b82f6 48%,#8b5cf6)}.game-card:nth-child(6)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(145deg,#facc15,#f97316 52%,#a855f7)}.game-card:nth-child(7)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 75% 20%,#fde047 0 8%,transparent 9%),linear-gradient(145deg,#ef4444,#f97316 50%,#22c55e)}.game-card:nth-child(8)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 25% 25%,#fff 0 5%,transparent 6%),linear-gradient(145deg,#84cc16,#2dd4bf 52%,#3b82f6)}
+    
+        .game-card:nth-child(1){background:linear-gradient(145deg,#352410,#20283b)!important}.game-card:nth-child(2){background:linear-gradient(145deg,#123c32,#173348)!important}.game-card:nth-child(3){background:linear-gradient(145deg,#702b35,#5a3b15)!important}.game-card:nth-child(4){background:linear-gradient(145deg,#1d573c,#164e62)!important}.game-card:nth-child(5){background:linear-gradient(145deg,#4d1831,#1d3267)!important}.game-card:nth-child(6){background:linear-gradient(145deg,#392069,#17476a)!important}
+        .game-card:nth-child(1)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 72% 22%,#fff36b 0 7%,transparent 8%),linear-gradient(155deg,#6ee7b7 0 48%,#3b82f6 49% 62%,#f59e0b 63%)}.game-card:nth-child(2)>div:first-child>div:first-child>div:first-child:before{background:linear-gradient(135deg,#4ade80,#14b8a6 50%,#166534)}.game-card:nth-child(3)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 75% 20%,#fde047 0 8%,transparent 9%),linear-gradient(145deg,#ef4444,#f97316 50%,#22c55e)}.game-card:nth-child(4)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 25% 25%,#fff 0 5%,transparent 6%),linear-gradient(145deg,#84cc16,#2dd4bf 52%,#3b82f6)}.game-card:nth-child(5)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 20% 25%,#fff36b 0 5%,transparent 6%),linear-gradient(135deg,#fb7185,#7c3aed 52%,#38bdf8)}.game-card:nth-child(6)>div:first-child>div:first-child>div:first-child:before{background:radial-gradient(circle at 72% 20%,#fff 0 5%,transparent 6%),linear-gradient(135deg,#f472b6,#8b5cf6 52%,#22d3ee)}
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
@@ -297,91 +300,19 @@
         if (new URLSearchParams(location.search).has('embed')) document.documentElement.classList.add('embedded');
         // --- GAME CATALOG DEFINITION ---
         const GAMES = [
-            {
-                id: 'game2048',
-                title: '2048 퍼즐',
-                category: 'puzzle',
-                categoryName: '퍼즐',
-                icon: 'fa-cubes',
-                badge: '전략 · 챌린지',
-                color: 'from-amber-500/20 to-orange-600/20',
-                border: 'border-amber-500/40',
-                desc: '목표 난이도를 선택하고, 한 수 되돌리기를 활용해 기록에 도전하세요.'
-            },
-            {
-                id: 'gameRhythm',
-                title: '리듬 피아노',
-                category: 'rhythm',
-                categoryName: '리듬',
-                icon: 'fa-music',
-                badge: '리듬 게임',
-                color: 'from-cyan-500/20 to-blue-600/20',
-                border: 'border-cyan-500/40',
-                desc: 'A, S, D, F 키를 눌러 떨어지는 음표와 박자를 맞춰요.'
-            },
-            {
-                id: 'gameSolitaire',
-                title: '스파이더 카드',
-                category: 'card',
-                categoryName: '카드',
-                icon: 'fa-spade',
-                badge: '차분하게',
-                color: 'from-emerald-500/20 to-teal-600/20',
-                border: 'border-emerald-500/40',
-                desc: '킹부터 에이스까지 카드를 차례로 정리해 보세요.'
-            },
-            {
-                id: 'gameBubble',
-                title: '버블 슈터',
-                category: 'casual',
-                categoryName: '캐주얼',
-                icon: 'fa-circle-dot',
-                badge: '가볍게',
-                color: 'from-pink-500/20 to-rose-600/20',
-                border: 'border-pink-500/40',
-                desc: '같은 색 거품을 세 개 이상 모아 톡톡 터뜨려요.'
-            },
-            {
-                id: 'gameBlock',
-                title: '블록 블래스트',
-                category: 'puzzle',
-                categoryName: '퍼즐',
-                icon: 'fa-shapes',
-                badge: '한 판 더',
-                color: 'from-indigo-500/20 to-violet-600/20',
-                border: 'border-indigo-500/40',
-                desc: '8×8 보드에 블록을 놓아 줄을 완성해 보세요.'
-            },
-            {
-                id: 'gameChess',
-                title: 'AI 체스',
-                category: 'board',
-                categoryName: '보드게임',
-                icon: 'fa-chess-king',
-                badge: '두뇌 대결',
-                color: 'from-purple-500/20 to-slate-700/20',
-                border: 'border-purple-500/40',
-                desc: '인공지능과 수를 겨루며 체크메이트를 노려요.'
-            },
-            {
-                id: 'gameMario', title: '슈퍼 마리오 브라더스', category: 'casual', categoryName: '캐주얼',
-                icon: 'fa-person-running', badge: '플랫폼 · 모험', color: 'from-red-500/30 to-yellow-400/30', border: 'border-red-400/50',
-                desc: '달리고 점프하며 코인을 모으는 레트로 횡스크롤 모험!'
-            },
-            {
-                id: 'gameOnet', title: '클래식 동물 연결', category: 'puzzle', categoryName: '퍼즐',
-                icon: 'fa-paw', badge: '동물 · 매칭', color: 'from-lime-400/30 to-cyan-400/30', border: 'border-lime-300/50',
-                desc: '같은 동물 타일을 두 번 이하로 꺾이는 길로 연결해요.'
-            }
+            { id:'game2048', title:'2048 퍼즐', category:'puzzle', categoryName:'퍼즐', icon:'fa-cubes', badge:'전략 · 챌린지', color:'from-amber-500/20 to-orange-600/20', border:'border-amber-500/40', desc:'숫자를 합쳐 목표 타일에 도전해 보세요.' },
+            { id:'gameSolitaire', title:'스파이더 카드', category:'card', categoryName:'카드', icon:'fa-spade', badge:'차분하게', color:'from-emerald-500/20 to-teal-600/20', border:'border-emerald-500/40', desc:'킹부터 에이스까지 카드를 차례로 정리해요.' },
+            { id:'gameMario', title:'슈퍼 마리오 브라더스', category:'casual', categoryName:'캐주얼', icon:'fa-person-running', badge:'플랫폼 · 모험', color:'from-red-500/30 to-yellow-400/30', border:'border-red-400/50', desc:'달리고 점프하며 코인을 모으는 레트로 횡스크롤 모험!' },
+            { id:'gameOnet', title:'클래식 동물 연결', category:'puzzle', categoryName:'퍼즐', icon:'fa-paw', badge:'동물 · 매칭', color:'from-lime-400/30 to-cyan-400/30', border:'border-lime-300/50', desc:'같은 동물 타일을 두 번 이하로 꺾이는 길로 연결해요.' },
+            { id:'gameWwf', title:'WWF 레슬페스트', category:'casual', categoryName:'캐주얼', icon:'fa-hand-fist', badge:'레슬링 · 액션', color:'from-red-500/35 to-blue-500/35', border:'border-rose-400/55', desc:'링에 올라 라이벌과 한 판 승부! 이동하고 점프해 타격을 성공시키세요.' },
+            { id:'gamePokemon', title:'포켓몬스터', category:'casual', categoryName:'캐주얼', icon:'fa-dragon', badge:'몬스터 · 배틀', color:'from-violet-500/35 to-cyan-400/35', border:'border-violet-300/55', desc:'파트너 몬스터를 골라 야생 몬스터와 턴제 배틀을 펼쳐요.' }
         ];
 
         const CATEGORIES = [
-            { id: 'all', name: '전체 게임', icon: 'fa-border-all' },
-            { id: 'puzzle', name: '퍼즐', icon: 'fa-cubes' },
-            { id: 'rhythm', name: '리듬', icon: 'fa-music' },
-            { id: 'card', name: '카드', icon: 'fa-spade' },
-            { id: 'casual', name: '캐주얼', icon: 'fa-gamepad' },
-            { id: 'board', name: '보드게임', icon: 'fa-chess' }
+            { id:'all', name:'전체 게임', icon:'fa-border-all' },
+            { id:'puzzle', name:'퍼즐', icon:'fa-cubes' },
+            { id:'card', name:'카드', icon:'fa-spade' },
+            { id:'casual', name:'캐주얼', icon:'fa-gamepad' }
         ];
 
         // --- GLOBAL STATE ---
@@ -556,13 +487,11 @@
             // Route to game initializer
             switch(id) {
                 case 'game2048': activeCleanup = init2048(stage); break;
-                case 'gameRhythm': activeCleanup = initRhythm(stage); break;
                 case 'gameSolitaire': activeCleanup = initSolitaire(stage); break;
-                case 'gameBubble': activeCleanup = initBubbleShooter(stage); break;
-                case 'gameBlock': activeCleanup = initBlockBlast(stage); break;
-                case 'gameChess': activeCleanup = initChess(stage); break;
                 case 'gameMario': activeCleanup = initMario(stage); break;
                 case 'gameOnet': activeCleanup = initOnet(stage); break;
+                case 'gameWwf': activeCleanup = initWrestleFest(stage); break;
+                case 'gamePokemon': activeCleanup = initPokemonBattle(stage); break;
             }
         }
 
@@ -1291,6 +1220,71 @@
                 let sx=player.x-cam;ctx.fillStyle='#dc2626';ctx.fillRect(sx-3,player.y-5,34,10);ctx.fillRect(sx+3,player.y-11,22,10);ctx.fillStyle='#fca5a5';ctx.fillRect(sx+7,player.y+4,16,12);ctx.fillStyle='#2563eb';ctx.fillRect(sx,player.y+15,28,17);ctx.fillStyle='#1e3a8a';ctx.fillRect(sx+2,player.y+30,10,8);ctx.fillRect(sx+18,player.y+30,10,8);ctx.fillStyle='white';ctx.fillRect(sx+18,player.y+1,4,5);ctx.fillStyle='#172554';ctx.fillRect(sx+20,player.y+2,2,3);requestAnimationFrame(draw)}
             function tick(){if(!alive)return;player.vx=(keys.ArrowRight?3.4:0)-(keys.ArrowLeft?3.4:0);if((keys.Space||keys.ArrowUp)&&player.ground){player.vy=-11;player.ground=false}player.vy=Math.min(player.vy+.52,12);player.x=Math.max(0,Math.min(2400,player.x+player.vx));player.y+=player.vy;if(player.y+player.h>=350){player.y=350-player.h;player.vy=0;player.ground=true}cam=Math.max(0,Math.min(1600,player.x-240));coins.forEach(c=>{if(!c.taken&&Math.abs(c.x-player.x-14)<22&&Math.abs(c.y-player.y-18)<30){c.taken=true;score++;saveHighScore('gameMario',score);status.textContent=`← → 이동 · Space 점프 · 코인 ${score}`}});foes.forEach(f=>{if(!f.alive)return;f.x+=f.dir*1.1;if(f.x<350||f.x>2360)f.dir*=-1;if(Math.abs(f.x-player.x)<27&&Math.abs(f.y-(player.y+player.h))<30){if(player.vy>1){f.alive=false;player.vy=-7}else{player.x=60;player.y=290;player.vy=0}}});if(player.x>2380){status.textContent=`🏁 도착! 코인 ${score}개`;player.x=2380}raf=requestAnimationFrame(tick)}
             wrap.querySelector('#marioRestart').onclick=reset;reset();draw();tick();return()=>{alive=false;cancelAnimationFrame(raf);window.removeEventListener('keydown',keydown);window.removeEventListener('keyup',keyup)};
+        }
+
+        function initWrestleFest(container){
+            const wrap=document.createElement('div');
+            wrap.style.cssText='width:min(100%,920px);padding:15px;border-radius:22px;background:linear-gradient(145deg,#101b47,#7f1d3b 55%,#d97706);color:#fff;box-shadow:0 22px 55px #0007';
+            wrap.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:0 4px 10px"><b style="font-size:21px;text-shadow:0 2px 5px #000">🤼 WWF 레슬페스트</b><span id="wwfStatus">← → 이동 · ↑ 점프 · Space 공격</span><button id="wwfRestart" style="border:0;border-radius:10px;padding:8px 12px;background:#facc15;color:#28140a;font-weight:900;cursor:pointer">재시작</button></div><canvas width="860" height="430" aria-label="레슬링 링 대전" style="display:block;width:100%;border-radius:15px;background:#171b3d;touch-action:none"></canvas><div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding-top:10px"><button data-wkey="ArrowLeft">◀ 이동</button><button data-wkey="ArrowUp">⬆ 점프</button><button data-wkey="Space">💥 공격</button><button data-wkey="ArrowRight">이동 ▶</button></div>';
+            container.appendChild(wrap);
+            const canvas=wrap.querySelector('canvas'),ctx=canvas.getContext('2d'),status=wrap.querySelector('#wwfStatus'),keys={};
+            wrap.querySelectorAll('[data-wkey]').forEach(b=>{b.style.cssText='border:0;border-radius:11px;padding:9px 13px;background:#ffffffdd;color:#20213d;font-weight:850;touch-action:none';const k=b.dataset.wkey;b.onpointerdown=e=>{e.preventDefault();keys[k]=true};for(const ev of ['pointerup','pointerleave','pointercancel'])b.addEventListener(ev,()=>keys[k]=false)});
+            let alive=true,frame=0,drawFrame=0,player,opponent,outcome='',streak=0;
+            function reset(){player={x:260,y:280,hp:100,vy:0,ground:true,cool:0,dir:1};opponent={x:610,y:280,hp:100,cool:65,dir:-1};outcome='';streak=0;status.textContent='← → 이동 · ↑ 점프 · Space 공격'}
+            function down(e){if(['ArrowLeft','ArrowRight','ArrowUp','Space'].includes(e.code)){e.preventDefault();keys[e.code]=true}}
+            function up(e){keys[e.code]=false}
+            window.addEventListener('keydown',down);window.addEventListener('keyup',up);
+            function fighter(x,y,color,dir){ctx.save();ctx.translate(x,y);ctx.scale(dir,1);ctx.fillStyle='rgba(0,0,0,.24)';ctx.beginPath();ctx.ellipse(0,5,32,8,0,0,7);ctx.fill();ctx.fillStyle=color;ctx.fillRect(-23,-50,46,48);ctx.fillStyle='#f3c6a4';ctx.beginPath();ctx.arc(0,-63,16,0,7);ctx.fill();ctx.fillStyle='#111827';ctx.fillRect(-16,-80,32,8);ctx.fillStyle='#fde68a';ctx.fillRect(-19,-18,15,22);ctx.fillRect(5,-18,15,22);ctx.fillStyle='#f3c6a4';ctx.fillRect(17,-45,25,11);ctx.restore()}
+            function draw(){
+                if(!alive)return;ctx.clearRect(0,0,860,430);
+                const bg=ctx.createLinearGradient(0,0,860,430);bg.addColorStop(0,'#312e81');bg.addColorStop(.5,'#9f1239');bg.addColorStop(1,'#f59e0b');ctx.fillStyle=bg;ctx.fillRect(0,0,860,430);
+                for(let n=0;n<12;n++){ctx.fillStyle=['#fef08a','#67e8f9','#f0abfc'][n%3];ctx.beginPath();ctx.arc(35+n*74,65+(n%3)*13,4+(n%2)*2,0,7);ctx.fill()}
+                ctx.fillStyle='#111827';ctx.fillRect(60,205,740,170);ctx.fillStyle='#e5e7eb';ctx.fillRect(105,220,650,130);ctx.fillStyle='#dc2626';ctx.fillRect(105,215,650,10);ctx.fillRect(105,260,650,8);ctx.fillRect(105,305,650,8);ctx.fillRect(95,205,14,160);ctx.fillRect(751,205,14,160);
+                ctx.fillStyle='#dbeafe';ctx.fillRect(111,319,638,25);ctx.fillStyle='#f8fafc';ctx.font='900 20px Arial';ctx.textAlign='center';ctx.fillText('WRESTLEFEST',430,339);
+                ctx.fillStyle='#0f172a';ctx.fillRect(28,22,320,20);ctx.fillRect(512,22,320,20);ctx.fillStyle='#22c55e';ctx.fillRect(31,25,314*Math.max(0,player.hp)/100,14);ctx.fillStyle='#fb7185';ctx.fillRect(515,25,314*Math.max(0,opponent.hp)/100,14);ctx.fillStyle='white';ctx.font='bold 13px Arial';ctx.textAlign='left';ctx.fillText('PLAYER',30,17);ctx.textAlign='right';ctx.fillText('RIVAL',830,17);
+                fighter(player.x,player.y,streak?'#38bdf8':'#2563eb',player.dir);fighter(opponent.x,opponent.y,'#ef4444',opponent.dir);
+                if(outcome){ctx.fillStyle='#020617bb';ctx.fillRect(190,132,480,70);ctx.fillStyle='#fff';ctx.font='900 31px Arial';ctx.textAlign='center';ctx.fillText(outcome,430,177)}
+                drawFrame=requestAnimationFrame(draw)
+            }
+            function tick(){
+                if(!alive)return;if(!outcome){
+                    const moving=(keys.ArrowRight?1:0)-(keys.ArrowLeft?1:0);player.x=Math.max(125,Math.min(735,player.x+moving*4));if(moving)player.dir=moving;
+                    if(keys.ArrowUp&&player.ground){player.vy=-11;player.ground=false}player.vy=Math.min(12,player.vy+.55);player.y+=player.vy;if(player.y>=280){player.y=280;player.vy=0;player.ground=true}
+                    player.cool=Math.max(0,player.cool-1);opponent.cool--;
+                    const close=Math.abs(player.x-opponent.x)<94&&Math.abs(player.y-opponent.y)<55;
+                    if((keys.Space||keys.KeyK)&&player.cool===0){player.cool=24;if(close){opponent.hp=Math.max(0,opponent.hp-17);streak++;saveHighScore('gameWwf',streak*100);status.textContent='명중! 연속 공격 '+streak+'회';if(opponent.hp===0)outcome='🏆 승리! 재시작으로 한 판 더'}}
+                    if(opponent.x>player.x+68)opponent.x-=1.05;else if(opponent.x<player.x-68)opponent.x+=1.05;opponent.dir=opponent.x>player.x?-1:1;
+                    if(close&&opponent.cool<=0){opponent.cool=70;player.hp=Math.max(0,player.hp-10);status.textContent='라이벌 반격! 거리를 조절하세요';if(player.hp===0)outcome='💫 패배! 재시작해 다시 도전'}
+                }
+                frame=requestAnimationFrame(tick)
+            }
+            wrap.querySelector('#wwfRestart').onclick=reset;reset();draw();tick();
+            return()=>{alive=false;cancelAnimationFrame(frame);cancelAnimationFrame(drawFrame);window.removeEventListener('keydown',down);window.removeEventListener('keyup',up)}
+        }
+
+        function initPokemonBattle(container){
+            const wrap=document.createElement('div');wrap.style.cssText='width:min(100%,760px);padding:18px;border-radius:24px;background:linear-gradient(145deg,#fff7ad,#c4b5fd 48%,#67e8f9);color:#24304d;box-shadow:0 22px 55px #0005';
+            const starters=[{name:'불꽃냥',emoji:'🔥🐱',type:'불꽃',color:'#fb7185'},{name:'잎새토끼',emoji:'🌿🐰',type:'풀',color:'#4ade80'},{name:'물방울펭귄',emoji:'💧🐧',type:'물',color:'#38bdf8'}];
+            const wild=[{name:'돌갑이',emoji:'🪨🐻',type:'바위'},{name:'번개박쥐',emoji:'⚡🦇',type:'번개'},{name:'구름슬라임',emoji:'☁️🫧',type:'바람'},{name:'밤송이룡',emoji:'🌰🐲',type:'풀'}];
+            let hero=null,foe=null,score=0,potions=2,log='파트너를 골라 모험을 시작하세요!';
+            function pickWild(){const m=wild[Math.floor(Math.random()*wild.length)];return {...m,hp:72,max:72}}
+            function bar(m){return '<div style="height:10px;background:#dbe3f5;border-radius:9px;overflow:hidden"><i style="display:block;height:100%;width:'+Math.max(0,m.hp/m.max*100)+'%;background:'+(m.hp<30?'#fb7185':'#22c55e')+'"></i></div>'}
+            function render(){
+                if(!hero){wrap.innerHTML='<b style="font-size:23px">⚡ 포켓몬스터 · 파트너 선택</b><p style="margin:7px 0 14px">함께할 첫 몬스터를 선택하세요. 모두 오리지널 몬스터예요.</p><div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">'+starters.map((m,n)=>'<button data-starter="'+n+'" style="min-height:145px;border:2px solid #ffffff;border-radius:17px;background:linear-gradient(145deg,#ffffffdd,'+m.color+'55);font-size:17px;font-weight:900;cursor:pointer"><span style="font-size:38px">'+m.emoji+'</span><br>'+m.name+'<br><small>'+m.type+' 타입</small></button>').join('')+'</div><p style="font-size:12px;color:#475569">기록 '+score+'점</p>';return}
+                const lost=hero.hp<=0;
+                wrap.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><b style="font-size:22px">⚡ 포켓몬스터 · 몬스터 배틀</b><button data-reset style="border:0;border-radius:10px;padding:8px 12px;background:#fff;color:#4338ca;font-weight:900;cursor:pointer">파트너 바꾸기</button></div><p style="margin:5px 0 12px;color:#475569">야생 몬스터를 이기고 새 상대에게 도전하세요 · 기록 '+score+'점</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="padding:14px;border-radius:18px;background:#ffffffd9"><div style="display:flex;justify-content:space-between;font-weight:900"><span>'+hero.name+'</span><small>'+hero.type+' 타입</small></div>'+bar(hero)+'<div style="font-size:13px;margin-top:3px">HP '+hero.hp+' / '+hero.max+'</div><div style="font-size:56px;text-align:center;padding:13px">'+hero.emoji+'</div></div><div style="padding:14px;border-radius:18px;background:#ffffffd9"><div style="display:flex;justify-content:space-between;font-weight:900"><span>야생 '+foe.name+'</span><small>'+foe.type+' 타입</small></div>'+bar(foe)+'<div style="font-size:13px;margin-top:3px">HP '+foe.hp+' / '+foe.max+'</div><div style="font-size:56px;text-align:center;padding:13px">'+foe.emoji+'</div></div></div><p style="padding:12px;border-radius:13px;background:#312e8166;color:white;font-weight:750">'+(lost?'기절했어요. 다시 시작하거나 파트너를 바꾸세요.':log)+'</p><div style="display:flex;gap:8px;flex-wrap:wrap">'+(foe.hp<=0?'<button data-next style="padding:10px 14px;border:0;border-radius:12px;background:#4f46e5;color:#fff;font-weight:900;cursor:pointer">다음 상대 찾기</button>':lost?'':'<button data-move="attack" style="padding:10px 14px;border:0;border-radius:12px;background:#ef4444;color:white;font-weight:900;cursor:pointer">기본 공격</button><button data-move="skill" style="padding:10px 14px;border:0;border-radius:12px;background:#7c3aed;color:white;font-weight:900;cursor:pointer">타입 기술 ✨</button><button data-move="potion" style="padding:10px 14px;border:0;border-radius:12px;background:#059669;color:white;font-weight:900;cursor:pointer">회복 열매 ('+potions+')</button>')+'</div>';
+            }
+            function act(move){
+                if(!hero||hero.hp<=0||foe.hp<=0)return;
+                let damage=0;
+                if(move==='attack'){damage=14+Math.floor(Math.random()*10);log=hero.name+'의 빠른 공격! '+damage+' 피해를 줬어요.'}
+                if(move==='skill'){damage=23+Math.floor(Math.random()*14);log=hero.name+'의 '+hero.type+' 기술! '+damage+' 피해를 줬어요.'}
+                if(move==='potion'){if(potions<=0){log='회복 열매를 다 썼어요.';render();return}potions--;hero.hp=Math.min(hero.max,hero.hp+28);log='회복 열매를 먹고 HP를 회복했어요.'}
+                foe.hp=Math.max(0,foe.hp-damage);if(foe.hp===0){score+=100;log='승리! '+foe.name+'을 이겼어요. 다음 상대에 도전하세요.';saveHighScore('gamePokemon',score);render();return}
+                const hit=8+Math.floor(Math.random()*12);hero.hp=Math.max(0,hero.hp-hit);log+=' '+foe.name+'의 반격, '+hit+' 피해!';render()
+            }
+            wrap.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.starter!==undefined){hero={...starters[Number(b.dataset.starter)],hp:100,max:100};foe=pickWild();render();return}if(b.dataset.reset!==undefined){hero=null;foe=null;potions=2;log='파트너를 골라 모험을 시작하세요!';render();return}if(b.dataset.next!==undefined){foe=pickWild();log='새로운 야생 몬스터가 나타났어요!';render();return}if(b.dataset.move)act(b.dataset.move)});
+            render();return()=>{}
         }
     </script>
 </body>
