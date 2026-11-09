@@ -127,6 +127,11 @@ footer{padding:36px 20px 48px;background:#e9e8df;color:#64726e}
 .review-actions button{font-weight:700;font-size:.84rem;font-family:inherit}
 </style>
 <style>.pick-mario{--pick-color:#dc2626;--pick-glow:rgba(250,204,21,.38);background:linear-gradient(145deg,#fff7ed,#fee2e2)}.pick-onet{--pick-color:#15803d;--pick-glow:rgba(74,222,128,.38);background:linear-gradient(145deg,#f0fdf4,#cffafe)}</style>
+<style>
+.pick-wrestlefest{--pick-color:#be123c;--pick-glow:rgba(251,113,133,.4);background:linear-gradient(145deg,#fff1f2,#dbeafe)}
+.pick-pokemon{--pick-color:#7c3aed;--pick-glow:rgba(192,132,252,.42);background:linear-gradient(145deg,#faf5ff,#cffafe)}
+.pick-wrestlefest .pick-icon,.pick-pokemon .pick-icon{font-size:1.65rem}
+</style>
 </head>
 <body>
 <header><nav aria-label="메뉴">
@@ -165,19 +170,17 @@ footer{padding:36px 20px 48px;background:#e9e8df;color:#64726e}
 <section class="band" id="game"><div class="in2">
 <div class="game-heading"><div><span class="game-kicker">NGHĨA · INTERACTIVE</span><h2>게임 아케이드</h2><p class="sub">직접 고르고 바로 플레이하는 미니게임 컬렉션. 퍼즐부터 카드 게임까지, 브라우저에서 가볍게 즐겨 보세요.</p></div><a class="game-window-link" href="hanghia_game_dice.html" target="_blank" rel="noopener">아케이드 전체 화면으로 열기 ↗</a></div>
 <div class="game-showcase">
-<div class="game-showcase-copy"><span class="game-kicker">BROWSER ARCADE · READY TO PLAY</span><h3>오늘의 플레이,<br><em>여기서 시작</em></h3><p>여덟 가지 게임을 고르고 기록을 쌓아 보세요. 레트로 플랫폼 모험부터 알록달록한 동물 연결 퍼즐까지 한곳에서 즐길 수 있어요.</p><div class="game-showcase-actions"><a class="game-cta" href="#game-hub">게임 선택하기 <span>↓</span></a></div><div class="game-tags"><span>01 · 퍼즐</span><span>02 · 리듬</span><span>03 · 카드</span><span>04 · 캐주얼</span><span>05 · 보드</span></div></div>
-<div class="game-scene" aria-hidden="true"><div class="arcade-orbit"></div><div class="arcade-console"><div class="console-top"><span>NGHĨA / ARCADE</span><span>PLAYER 01</span></div><div class="console-screen"><span>SELECT YOUR GAME</span><div class="screen-icons"><b>2048</b><b>♫</b><b>♠</b></div><span>PLAY · FOCUS · REPEAT</span></div><div class="console-controls"><i></i><i></i><i></i><i></i></div></div><span class="art-index">Nº 001—008</span></div>
+<div class="game-showcase-copy"><span class="game-kicker">BROWSER ARCADE · READY TO PLAY</span><h3>오늘의 플레이,<br><em>여기서 시작</em></h3><p>여섯 가지 게임을 직접 골라 플레이하세요. 플랫폼 모험, 동물 퍼즐, 레슬링 액션과 몬스터 배틀을 한곳에서 즐겨 보세요.</p><div class="game-showcase-actions"><a class="game-cta" href="#game-hub">게임 선택하기 <span>↓</span></a></div><div class="game-tags"><span>01 · 퍼즐</span><span>02 · 카드</span><span>03 · 플랫폼</span><span>04 · 레슬링</span><span>05 · 몬스터 배틀</span></div></div>
+<div class="game-scene" aria-hidden="true"><div class="arcade-orbit"></div><div class="arcade-console"><div class="console-top"><span>NGHĨA / ARCADE</span><span>PLAYER 01</span></div><div class="console-screen"><span>SELECT YOUR GAME</span><div class="screen-icons"><b>2048</b><b>♫</b><b>♠</b></div><span>PLAY · FOCUS · REPEAT</span></div><div class="console-controls"><i></i><i></i><i></i><i></i></div></div><span class="art-index">Nº 001—006</span></div>
 </div>
-<div class="game-info-row"><div><b>08</b><span>미니게임</span></div><div><b>06</b><span>플레이 카테고리</span></div><div><b>WEB</b><span>설치 없이 플레이</span></div><p>즐겨찾기와 최고 점수는 이 브라우저에 저장됩니다.</p></div>
+<div class="game-info-row"><div><b>06</b><span>미니게임</span></div><div><b>03</b><span>플레이 카테고리</span></div><div><b>WEB</b><span>설치 없이 플레이</span></div><p>즐겨찾기와 최고 점수는 이 브라우저에 저장됩니다.</p></div>
 <div class="game-picks"><div class="game-picks-heading"><div><span>THE GAME LINEUP</span><h3>무엇부터 플레이할까요?</h3></div><p>게임을 고르면 아래 아케이드에서 바로 시작할 수 있어요.</p></div><div class="game-pick-grid">
 <a class="game-pick pick-puzzle" data-game-id="game2048" href="#game-hub"><span class="pick-number">01 / PUZZLE</span><span class="pick-icon">2048</span><b>2048 퍼즐</b><small>숫자를 합쳐 목표 타일에 도전</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-rhythm" data-game-id="gameRhythm" href="#game-hub"><span class="pick-number">02 / RHYTHM</span><span class="pick-icon">♫</span><b>리듬 피아노</b><small>박자에 맞춰 음표를 연주</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-card" data-game-id="gameSolitaire" href="#game-hub"><span class="pick-number">03 / CARDS</span><span class="pick-icon">♠</span><b>스파이더 카드</b><small>카드를 정리하는 집중 플레이</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-bubble" data-game-id="gameBubble" href="#game-hub"><span class="pick-number">04 / ARCADE</span><span class="pick-icon">◉</span><b>버블 슈터</b><small>각도를 조절해 버블을 쏘는 캐주얼 게임</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-block" data-game-id="gameBlock" href="#game-hub"><span class="pick-number">05 / TACTICS</span><span class="pick-icon">▧</span><b>블록 블래스트</b><small>공간을 읽고 줄을 완성하는 퍼즐</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-chess" data-game-id="gameChess" href="#game-hub"><span class="pick-number">06 / STRATEGY</span><span class="pick-icon">♟</span><b>AI 체스</b><small>수를 읽고 다음 전략을 세워 보세요</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-mario" data-game-id="gameMario" href="#game-hub"><span class="pick-number">07 / PLATFORM</span><span class="pick-icon">🍄</span><b>슈퍼 마리오 브라더스</b><small>달리고 점프하며 코인을 모아요</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-onet" data-game-id="gameOnet" href="#game-hub"><span class="pick-number">08 / MATCH</span><span class="pick-icon">🐾</span><b>클래식 동물 연결</b><small>같은 동물을 길로 이어 짝 맞추기</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-card" data-game-id="gameSolitaire" href="#game-hub"><span class="pick-number">02 / CARDS</span><span class="pick-icon">♠</span><b>스파이더 카드</b><small>카드를 정리하는 집중 플레이</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-mario" data-game-id="gameMario" href="#game-hub"><span class="pick-number">03 / PLATFORM</span><span class="pick-icon">🍄</span><b>슈퍼 마리오 브라더스</b><small>달리고 점프하며 코인을 모아요</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-onet" data-game-id="gameOnet" href="#game-hub"><span class="pick-number">04 / MATCH</span><span class="pick-icon">🐾</span><b>클래식 동물 연결</b><small>같은 동물을 길로 이어 짝 맞추기</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-wrestlefest" data-game-id="gameWwf" href="#game-hub"><span class="pick-number">05 / WRESTLING</span><span class="pick-icon">🤼</span><b>WWF 레슬페스트</b><small>이동·점프·공격으로 링 대결</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-pokemon" data-game-id="gamePokemon" href="#game-hub"><span class="pick-number">06 / MONSTER BATTLE</span><span class="pick-icon">⚡</span><b>포켓몬스터</b><small>파트너 몬스터와 턴제 배틀</small><span class="pick-link">게임 선택하기 ↘</span></a>
 </div></div>
 <div class="game-hub-label" id="game-hub"><div><span>ARCADE LIBRARY</span><h3>플레이할 게임을 선택하세요</h3></div><a href="hanghia_game_dice.html" target="_blank" rel="noopener">넓은 화면으로 보기 ↗</a></div>
 <div class="card game-frame-card" style="padding:8px;overflow:hidden">
