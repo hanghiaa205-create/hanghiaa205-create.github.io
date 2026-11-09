@@ -1284,7 +1284,7 @@
                 const hit=8+Math.floor(Math.random()*12);hero.hp=Math.max(0,hero.hp-hit);log+=' '+foe.name+'의 반격, '+hit+' 피해!';render()
             }
             wrap.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.starter!==undefined){hero={...starters[Number(b.dataset.starter)],hp:100,max:100};foe=pickWild();render();return}if(b.dataset.reset!==undefined){hero=null;foe=null;potions=2;log='파트너를 골라 모험을 시작하세요!';render();return}if(b.dataset.next!==undefined){foe=pickWild();log='새로운 야생 몬스터가 나타났어요!';render();return}if(b.dataset.move)act(b.dataset.move)});
-            render();return()=>{}
+            container.appendChild(wrap);render();return()=>{}
         }
     </script>
 </body>
