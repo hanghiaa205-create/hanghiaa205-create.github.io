@@ -329,8 +329,8 @@
                     <span class="text-slate-400">최고 점수:</span>
                     <span id="overlayHighScore" class="font-bold text-amber-400">0</span>
                 </div>
-                <button id="arcadeSoundBtn" onclick="toggleArcadeSound()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700" aria-label="게임 소리 끄기" aria-pressed="true" title="게임 소리 끄기">
-                    <i id="arcadeSoundIcon" class="fa-solid fa-volume-high text-sm"></i>
+                <button id="arcadeSoundBtn" onclick="toggleArcadeSound()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold flex items-center gap-2" aria-label="음악과 효과음 끄기" aria-pressed="true" title="음악과 효과음 끄기">
+                    <i id="arcadeSoundIcon" class="fa-solid fa-volume-high text-sm"></i><span id="arcadeSoundLabel">♫ 소리 켜짐</span>
                 </button>
                 <button id="restartBtn" onclick="restartCurrentGame()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white" title="다시 시작" aria-label="다시 시작">
                     <i class="fa-solid fa-rotate-right text-sm"></i>
@@ -527,17 +527,70 @@
             gamePokemon: { base: 490, wave: 'triangle' }
         };
         let arcadeAudio = null;
+        let arcadeMusicTimer = null;
+        let arcadeMusicBeat = 0;
         let arcadeSoundMuted = localStorage.getItem('hub_sound_muted') === '1';
+        const arcadeMusicPatterns = {
+            game2048: [1,1.25,1.5,2,1.5,1.25,1.12,1.5],
+            gameSolitaire: [1,1.5,1.25,1.75,1.5,1.25,1.12,1.5],
+            gameMario: [1,1.25,1.5,2,1.5,2,1.5,1.25],
+            gameOnet: [1,1.5,1.25,2,1.5,1.25,1.5,2],
+            gameWwf: [1,1,1.25,1,1.5,1.25,.9,1],
+            gamePokemon: [1,1.25,1.5,1.25,2,1.5,1.25,1.5]
+        };
         function updateArcadeSoundButton() {
             const button = document.getElementById('arcadeSoundBtn');
             const icon = document.getElementById('arcadeSoundIcon');
             if (!button || !icon) return;
             button.setAttribute('aria-pressed', String(!arcadeSoundMuted));
-            button.setAttribute('aria-label', arcadeSoundMuted ? '게임 소리 켜기' : '게임 소리 끄기');
-            button.title = arcadeSoundMuted ? '게임 소리 켜기' : '게임 소리 끄기';
+            button.setAttribute('aria-label', arcadeSoundMuted ? '음악과 효과음 켜기' : '음악과 효과음 끄기');
+            button.title = arcadeSoundMuted ? '음악과 효과음 켜기' : '음악과 효과음 끄기';
             icon.className = arcadeSoundMuted ? 'fa-solid fa-volume-xmark text-sm' : 'fa-solid fa-volume-high text-sm';
             button.classList.toggle('text-amber-300', !arcadeSoundMuted);
             button.classList.toggle('text-slate-300', arcadeSoundMuted);
+        }
+        function stopArcadeMusic() {
+            if (arcadeMusicTimer) clearInterval(arcadeMusicTimer);
+            arcadeMusicTimer = null;
+        }
+        function scheduleMusicNote(frequency, duration, volume, wave = 'sine') {
+            if (!arcadeAudio || arcadeAudio.state !== 'running') return;
+            const start = arcadeAudio.currentTime + .015;
+            const osc = arcadeAudio.createOscillator();
+            const gain = arcadeAudio.createGain();
+            osc.type = wave;
+            osc.frequency.setValueAtTime(frequency, start);
+            gain.gain.setValueAtTime(.0001, start);
+            gain.gain.exponentialRampToValueAtTime(volume, start + .035);
+            gain.gain.exponentialRampToValueAtTime(.0001, start + duration);
+            osc.connect(gain);
+            gain.connect(arcadeAudio.destination);
+            osc.start(start);
+            osc.stop(start + duration + .02);
+        }
+        function startArcadeMusic() {
+            stopArcadeMusic();
+            if (arcadeSoundMuted || !activeGameId) return;
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContextClass) return;
+            try {
+                if (!arcadeAudio) arcadeAudio = new AudioContextClass();
+                arcadeMusicBeat = 0;
+                arcadeAudio.resume().then(() => {
+                    if (arcadeSoundMuted || !activeGameId) return;
+                    const tick = () => {
+                        if (arcadeSoundMuted || !activeGameId) { stopArcadeMusic(); return; }
+                        const profile = arcadeSoundProfiles[activeGameId] || { base: 440, wave: 'sine' };
+                        const pattern = arcadeMusicPatterns[activeGameId] || arcadeMusicPatterns.game2048;
+                        const ratio = pattern[arcadeMusicBeat % pattern.length];
+                        scheduleMusicNote(profile.base * ratio, .3, .032, profile.wave);
+                        if (arcadeMusicBeat % 4 === 0) scheduleMusicNote(profile.base * .5, .36, .019, 'sine');
+                        arcadeMusicBeat++;
+                    };
+                    tick();
+                    arcadeMusicTimer = setInterval(tick, 440);
+                }).catch(() => {});
+            } catch (_) {}
         }
         function playArcadeSound(kind = 'tap') {
             if (arcadeSoundMuted) return;
@@ -568,7 +621,7 @@
                     osc.frequency.setValueAtTime(profile.base * ratio, start);
                     if (kind === 'attack') osc.frequency.exponentialRampToValueAtTime(Math.max(55, profile.base * ratio * .66), start + duration);
                     gain.gain.setValueAtTime(.0001, start);
-                    gain.gain.exponentialRampToValueAtTime(kind === 'attack' ? .035 : .022, start + .012);
+                    gain.gain.exponentialRampToValueAtTime(kind === 'attack' ? .05 : .038, start + .012);
                     gain.gain.exponentialRampToValueAtTime(.0001, start + duration);
                     osc.connect(gain);
                     gain.connect(arcadeAudio.destination);
@@ -581,7 +634,8 @@
             arcadeSoundMuted = !arcadeSoundMuted;
             localStorage.setItem('hub_sound_muted', arcadeSoundMuted ? '1' : '0');
             updateArcadeSoundButton();
-            if (!arcadeSoundMuted) playArcadeSound('select');
+            if (arcadeSoundMuted) stopArcadeMusic();
+            else { startArcadeMusic(); playArcadeSound('select'); }
         }
         updateArcadeSoundButton();
 
@@ -600,6 +654,7 @@
             document.getElementById('overlayGameIcon').className = `fa-solid ${game.icon} text-indigo-400 text-lg`;
             document.getElementById('overlayHighScore').innerText = highScores[id] || 0;
             playArcadeSound('start');
+            startArcadeMusic();
 
             const stage = document.getElementById('gameStage');
             stage.innerHTML = ''; // Clear prior game DOM
@@ -634,6 +689,7 @@
 
         function closeGameOverlay() {
             playArcadeSound('tap');
+            stopArcadeMusic();
             if (activeCleanup) {
                 activeCleanup();
                 activeCleanup = null;
@@ -653,6 +709,7 @@
         const gameStage = document.getElementById('gameStage');
         gameStage.addEventListener('click', event => {
             if (!activeGameId) return;
+            if (!arcadeSoundMuted && !arcadeMusicTimer) startArcadeMusic();
             const target = event.target;
             const button = target.closest('button');
             if (activeGameId === 'gamePokemon' && button) {
@@ -675,7 +732,9 @@
             }
         }, true);
         window.addEventListener('keydown', event => {
-            if (!activeGameId || event.repeat || arcadeSoundMuted) return;
+            if (!activeGameId || event.repeat) return;
+            if (!arcadeSoundMuted && !arcadeMusicTimer) startArcadeMusic();
+            if (arcadeSoundMuted) return;
             if (activeGameId === 'game2048' && ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key)) playArcadeSound('move');
             else if (activeGameId === 'gameMario' && ['ArrowLeft','ArrowRight'].includes(event.key)) playArcadeSound('move');
             else if (activeGameId === 'gameMario' && event.code === 'Space') playArcadeSound('skill');
