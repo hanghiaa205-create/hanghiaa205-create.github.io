@@ -541,10 +541,12 @@
         function updateArcadeSoundButton() {
             const button = document.getElementById('arcadeSoundBtn');
             const icon = document.getElementById('arcadeSoundIcon');
+            const label = document.getElementById('arcadeSoundLabel');
             if (!button || !icon) return;
             button.setAttribute('aria-pressed', String(!arcadeSoundMuted));
             button.setAttribute('aria-label', arcadeSoundMuted ? '음악과 효과음 켜기' : '음악과 효과음 끄기');
             button.title = arcadeSoundMuted ? '음악과 효과음 켜기' : '음악과 효과음 끄기';
+            if (label) label.textContent = arcadeSoundMuted ? '♫ 소리 꺼짐' : '♫ 소리 켜짐';
             icon.className = arcadeSoundMuted ? 'fa-solid fa-volume-xmark text-sm' : 'fa-solid fa-volume-high text-sm';
             button.classList.toggle('text-amber-300', !arcadeSoundMuted);
             button.classList.toggle('text-slate-300', arcadeSoundMuted);
