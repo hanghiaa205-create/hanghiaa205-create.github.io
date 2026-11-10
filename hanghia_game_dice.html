@@ -329,6 +329,9 @@
                     <span class="text-slate-400">최고 점수:</span>
                     <span id="overlayHighScore" class="font-bold text-amber-400">0</span>
                 </div>
+                <button id="arcadeSoundBtn" onclick="toggleArcadeSound()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700" aria-label="게임 소리 끄기" aria-pressed="true" title="게임 소리 끄기">
+                    <i id="arcadeSoundIcon" class="fa-solid fa-volume-high text-sm"></i>
+                </button>
                 <button id="restartBtn" onclick="restartCurrentGame()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white" title="다시 시작" aria-label="다시 시작">
                     <i class="fa-solid fa-rotate-right text-sm"></i>
                 </button>
@@ -514,6 +517,74 @@
             }).join('');
         }
 
+        // --- ARCADE SOUND DESIGN ---
+        const arcadeSoundProfiles = {
+            game2048: { base: 520, wave: 'sine' },
+            gameSolitaire: { base: 390, wave: 'triangle' },
+            gameMario: { base: 660, wave: 'square' },
+            gameOnet: { base: 570, wave: 'sine' },
+            gameWwf: { base: 145, wave: 'sawtooth' },
+            gamePokemon: { base: 490, wave: 'triangle' }
+        };
+        let arcadeAudio = null;
+        let arcadeSoundMuted = localStorage.getItem('hub_sound_muted') === '1';
+        function updateArcadeSoundButton() {
+            const button = document.getElementById('arcadeSoundBtn');
+            const icon = document.getElementById('arcadeSoundIcon');
+            if (!button || !icon) return;
+            button.setAttribute('aria-pressed', String(!arcadeSoundMuted));
+            button.setAttribute('aria-label', arcadeSoundMuted ? '게임 소리 켜기' : '게임 소리 끄기');
+            button.title = arcadeSoundMuted ? '게임 소리 켜기' : '게임 소리 끄기';
+            icon.className = arcadeSoundMuted ? 'fa-solid fa-volume-xmark text-sm' : 'fa-solid fa-volume-high text-sm';
+            button.classList.toggle('text-amber-300', !arcadeSoundMuted);
+            button.classList.toggle('text-slate-300', arcadeSoundMuted);
+        }
+        function playArcadeSound(kind = 'tap') {
+            if (arcadeSoundMuted) return;
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContextClass) return;
+            try {
+                if (!arcadeAudio) arcadeAudio = new AudioContextClass();
+                if (arcadeAudio.state === 'suspended') arcadeAudio.resume();
+                const profile = arcadeSoundProfiles[activeGameId] || { base: 440, wave: 'sine' };
+                const patterns = {
+                    start: [[1, .075], [1.25, .075], [1.5, .12]],
+                    tap: [[1, .055]],
+                    move: [[1, .045]],
+                    select: [[1.12, .09]],
+                    match: [[1, .08], [1.34, .1], [1.68, .14]],
+                    attack: [[.72, .07], [.52, .1]],
+                    skill: [[1.25, .07], [1.6, .08], [2, .13]],
+                    heal: [[1, .1], [1.25, .12]],
+                    win: [[1, .08], [1.25, .08], [1.5, .08], [2, .18]]
+                };
+                const notes = patterns[kind] || patterns.tap;
+                const now = arcadeAudio.currentTime;
+                notes.forEach(([ratio, duration], index) => {
+                    const start = now + index * .075;
+                    const osc = arcadeAudio.createOscillator();
+                    const gain = arcadeAudio.createGain();
+                    osc.type = profile.wave;
+                    osc.frequency.setValueAtTime(profile.base * ratio, start);
+                    if (kind === 'attack') osc.frequency.exponentialRampToValueAtTime(Math.max(55, profile.base * ratio * .66), start + duration);
+                    gain.gain.setValueAtTime(.0001, start);
+                    gain.gain.exponentialRampToValueAtTime(kind === 'attack' ? .035 : .022, start + .012);
+                    gain.gain.exponentialRampToValueAtTime(.0001, start + duration);
+                    osc.connect(gain);
+                    gain.connect(arcadeAudio.destination);
+                    osc.start(start);
+                    osc.stop(start + duration + .01);
+                });
+            } catch (_) {}
+        }
+        function toggleArcadeSound() {
+            arcadeSoundMuted = !arcadeSoundMuted;
+            localStorage.setItem('hub_sound_muted', arcadeSoundMuted ? '1' : '0');
+            updateArcadeSoundButton();
+            if (!arcadeSoundMuted) playArcadeSound('select');
+        }
+        updateArcadeSoundButton();
+
         // --- OVERLAY & GAME LAUNCHER ---
         function launchGame(id) {
             const game = GAMES.find(g => g.id === id);
@@ -528,6 +599,7 @@
             document.getElementById('overlayGameTitle').innerText = game.title;
             document.getElementById('overlayGameIcon').className = `fa-solid ${game.icon} text-indigo-400 text-lg`;
             document.getElementById('overlayHighScore').innerText = highScores[id] || 0;
+            playArcadeSound('start');
 
             const stage = document.getElementById('gameStage');
             stage.innerHTML = ''; // Clear prior game DOM
@@ -561,6 +633,7 @@
         }
 
         function closeGameOverlay() {
+            playArcadeSound('tap');
             if (activeCleanup) {
                 activeCleanup();
                 activeCleanup = null;
@@ -575,6 +648,41 @@
         function restartCurrentGame() {
             if (activeGameId) launchGame(activeGameId);
         }
+
+        // Quiet synthesized effects follow the active game's visual style.
+        const gameStage = document.getElementById('gameStage');
+        gameStage.addEventListener('click', event => {
+            if (!activeGameId) return;
+            const target = event.target;
+            const button = target.closest('button');
+            if (activeGameId === 'gamePokemon' && button) {
+                if (button.dataset.starter !== undefined) playArcadeSound('select');
+                else if (button.dataset.move === 'skill') playArcadeSound('skill');
+                else if (button.dataset.move === 'potion') playArcadeSound('heal');
+                else if (button.dataset.move === 'attack') playArcadeSound('attack');
+                else if (button.dataset.next !== undefined) playArcadeSound('start');
+                else playArcadeSound('tap');
+            } else if (activeGameId === 'gameWwf' && button) {
+                playArcadeSound(button.dataset.wkey === 'Space' ? 'attack' : 'move');
+            } else if (activeGameId === 'gameMario' && button) {
+                playArcadeSound(button.dataset.mkey === 'Space' ? 'skill' : 'move');
+            } else if (activeGameId === 'gameOnet' && button) {
+                playArcadeSound(button.id === 'onetShuffle' ? 'start' : 'select');
+            } else if (activeGameId === 'gameSolitaire' && (button || target.closest('#solBoard'))) {
+                playArcadeSound('select');
+            } else if (activeGameId === 'game2048' && button) {
+                playArcadeSound('select');
+            }
+        }, true);
+        window.addEventListener('keydown', event => {
+            if (!activeGameId || event.repeat || arcadeSoundMuted) return;
+            if (activeGameId === 'game2048' && ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key)) playArcadeSound('move');
+            else if (activeGameId === 'gameMario' && ['ArrowLeft','ArrowRight'].includes(event.key)) playArcadeSound('move');
+            else if (activeGameId === 'gameMario' && event.code === 'Space') playArcadeSound('skill');
+            else if (activeGameId === 'gameWwf' && ['ArrowLeft','ArrowRight'].includes(event.key)) playArcadeSound('move');
+            else if (activeGameId === 'gameWwf' && event.key === 'ArrowUp') playArcadeSound('skill');
+            else if (activeGameId === 'gameWwf' && (event.code === 'Space' || event.key.toLowerCase() === 'k')) playArcadeSound('attack');
+        }, true);
 
         function init2048(container) {
             let board = Array(16).fill(0), score = 0, moves = 0, bestTile = 0;
