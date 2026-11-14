@@ -125,6 +125,29 @@ footer{padding:36px 20px 48px;background:#e9e8df;color:#64726e}
 @media(max-width:760px){.game-picks-heading{align-items:flex-start;flex-direction:column;gap:5px}.game-pick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.game-pick{min-height:172px;padding:15px}.pick-icon{right:14px;top:35px;width:43px;height:43px}.game-pick>b{font-size:1rem}.game-pick>small{max-width:13em;font-size:.72rem}}@media(max-width:420px){.game-pick-grid{gap:8px}.game-pick{min-height:166px;padding:12px;border-radius:10px}.pick-icon{right:10px;top:31px;width:37px;height:37px}.pick-number{font-size:.57rem}.game-pick>b{margin-top:20px;font-size:.92rem}.game-pick>small{line-height:1.4}.pick-link{font-size:.66rem}}
 .bk{cursor:pointer}.bk:focus-visible{outline:3px solid var(--sea);outline-offset:4px}.book-dialog{width:min(760px,calc(100vw - 28px));max-height:min(90vh,900px);padding:0;border:1px solid rgba(226,232,233,.9);border-radius:24px;background:#f8faf9;color:#172b28;box-shadow:0 28px 100px rgba(6,21,26,.38)}.book-dialog::backdrop{background:rgba(8,20,26,.68);backdrop-filter:blur(5px)}.book-dialog-shell{position:relative;padding:clamp(22px,4vw,38px)}.book-dialog-close{position:absolute;z-index:2;right:18px;top:16px;width:38px;height:38px;border:1px solid #d9e2df;border-radius:50%;background:#fff;color:#31413d;font-size:1.5rem;line-height:1;cursor:pointer}.book-detail{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:clamp(20px,4vw,34px);padding:8px 34px 26px 0;border-bottom:1px solid #dfe7e4}.book-detail>img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:10px;box-shadow:0 12px 28px rgba(22,43,38,.2);background:#e8eeeb}.book-detail-kicker,.review-heading>div>span{color:#577c74;font:800 .66rem Arial,sans-serif;letter-spacing:.16em}.book-detail h2{margin:9px 0 6px;font-size:clamp(1.7rem,4vw,2.4rem);line-height:1.2;letter-spacing:-.035em}.book-detail>div>p{margin:0;color:#73817d}.book-review-prompt{margin-top:22px;padding:14px 16px;border-left:3px solid #75a69a;background:#edf4f0}.book-review-prompt span{color:#55776d;font:800 .62rem Arial,sans-serif;letter-spacing:.14em}.book-review-prompt p{margin:6px 0 0;color:#455b54;font-size:.88rem;line-height:1.6}.book-review{padding-top:22px}.review-heading{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:12px}.review-heading h3{margin:4px 0 0;font-size:1.35rem}.review-heading label{display:flex;align-items:center;gap:8px;color:#62736d;font-size:.76rem}.review-heading select{border:1px solid #d5dfdb;border-radius:8px;padding:8px 10px;background:#fff;color:#30413b;font:inherit}.book-review textarea{display:block;width:100%;min-height:150px;resize:vertical;border:1px solid #d5dfdb;border-radius:12px;padding:14px 15px;background:#fff;color:#23352f;font:inherit;font-size:.92rem;line-height:1.7}.book-review textarea::placeholder{color:#94a19d}.book-review textarea:focus,.review-heading select:focus{outline:3px solid rgba(52,123,118,.22);border-color:#347b76}.review-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}.review-actions p{margin:0;color:#74827d;font-size:.78rem}.review-actions button{border:0;border-radius:9px;padding:10px 17px;background:#183f3c;color:#fff;font:700 .84rem inherit;cursor:pointer}.review-actions button:hover{background:#28645c}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:560px){.book-dialog{border-radius:18px}.book-dialog-shell{padding:20px}.book-detail{grid-template-columns:105px 1fr;gap:16px;padding-right:25px}.book-detail h2{font-size:1.42rem}.book-review-prompt{margin-top:14px;padding:11px}.book-review-prompt p{font-size:.8rem}.review-heading{align-items:flex-start;flex-direction:column}.review-actions{align-items:flex-start;flex-direction:column-reverse}.review-actions button{width:100%}}
 .review-actions button{font-weight:700;font-size:.84rem;font-family:inherit}
+/* Education journey */
+.education{background:#f7f9fb!important;color:#101b31;overflow:hidden}
+.education-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.education-kicker{display:inline-block;margin-bottom:10px;color:#0784cb;font:800 .75rem/1.2 "Gowun Dodum",sans-serif;letter-spacing:.18em}
+.education-intro h2{color:#101b31;margin:0 0 8px}
+.education-intro h2:before{content:none}
+.education-intro .sub{margin:0;color:#607087}
+.education-count{display:flex;align-items:baseline;gap:8px;flex:none;color:#718096}
+.education-count b{font:700 2.4rem/1 "Jua",sans-serif;color:#0784cb}
+.education-count small{font-size:.82rem}
+.education-timeline{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;list-style:none;margin:68px 0 0;padding:0}
+.education-timeline:before{content:"";position:absolute;left:9%;right:9%;top:22px;height:2px;background:#bfd8eb}
+.education-timeline li{position:relative;min-width:0;padding-top:60px;text-align:center}
+.education-node{position:absolute;z-index:1;top:0;left:50%;display:grid;place-items:center;width:46px;height:46px;transform:translateX(-50%);border:5px solid #f7f9fb;border-radius:50%;background:#0784cb;color:#fff;font:700 .82rem/1 "Gowun Dodum",sans-serif;box-shadow:0 0 0 1px #0784cb}
+.education-timeline li:nth-child(4) .education-node{background:#ee6b35;box-shadow:0 0 0 1px #ee6b35}
+.education-timeline li:nth-child(5) .education-node{background:#101b31;box-shadow:0 0 0 1px #101b31}
+.education-year{color:#0784cb;font-size:.82rem;font-weight:700;letter-spacing:.02em}
+.education-timeline li:nth-child(4) .education-year{color:#d95826}
+.education-timeline h3{margin:8px 0 5px;color:#14213a;font:700 1.02rem/1.45 "Gowun Dodum","Malgun Gothic",sans-serif;overflow-wrap:anywhere}
+.education-timeline p{margin:0;color:#607087;font-size:.88rem}
+.education-current h3{color:#101b31}
+@media(max-width:760px){.education-timeline{grid-template-columns:1fr;gap:0;margin:42px 0 0;padding-left:4px}.education-timeline:before{left:22px;right:auto;top:18px;bottom:26px;width:2px;height:auto}.education-timeline li{min-height:126px;padding:3px 0 24px 68px;text-align:left}.education-node{left:22px;transform:translateX(-50%)}.education-timeline h3{font-size:1.04rem}.education-current{min-height:100px!important}}
+@media(max-width:460px){.education-intro{align-items:flex-start}.education-count{gap:4px;flex-direction:column;align-items:flex-end}.education-count b{font-size:1.9rem}.education-kicker{font-size:.68rem}.education-intro .sub{font-size:.92rem}}
 </style>
 <style>.pick-mario{--pick-color:#dc2626;--pick-glow:rgba(250,204,21,.38);background:linear-gradient(145deg,#fff7ed,#fee2e2)}.pick-onet{--pick-color:#15803d;--pick-glow:rgba(74,222,128,.38);background:linear-gradient(145deg,#f0fdf4,#cffafe)}</style>
 <style>
@@ -135,7 +158,7 @@ footer{padding:36px 20px 48px;background:#e9e8df;color:#64726e}
 </head>
 <body>
 <header><nav aria-label="메뉴">
-<a href="#intro" data-s="intro">자기소개</a><a href="#hobby" data-s="hobby">취미생활</a><a href="#music" data-s="music">음악감성</a><a href="#game" data-s="game">게임함</a><a href="#library" data-s="library">도서관</a>
+<a href="#intro" data-s="intro">자기소개</a><a href="#education" data-s="education">교육과정</a><a href="#hobby" data-s="hobby">취미생활</a><a href="#music" data-s="music">음악감성</a><a href="#game" data-s="game">게임함</a><a href="#library" data-s="library">도서관</a>
 </nav></header>
 
 <div class="hero" id="intro">
@@ -148,6 +171,17 @@ footer{padding:36px 20px 48px;background:#e9e8df;color:#64726e}
 </div>
 <svg viewBox="0 0 800 130" preserveAspectRatio="none" aria-hidden="true"><path class="route" d="M0 110 C80 110 100 70 170 78 S260 30 340 50 S430 100 500 70 S600 10 680 28 S760 60 800 40" fill="none" stroke="#ffc93c" stroke-width="5" stroke-linecap="round"/><path d="M0 110 C80 110 100 70 170 78 S260 30 340 50 S430 100 500 70 S600 10 680 28 S760 60 800 40 V130 H0Z" fill="#fff" opacity=".07"/></svg>
 </div>
+
+<section class="band education" id="education" aria-labelledby="education-title"><div class="in2">
+<div class="education-intro"><div><span class="education-kicker">MY EDUCATION JOURNEY</span><h2 id="education-title">나의 학업 타임라인</h2><p class="sub">기초 교육부터 대학 전공까지, 다섯 단계의 학업 여정입니다.</p></div><span class="education-count"><b>05</b><small>주요 단계</small></span></div>
+<ol class="education-timeline" aria-label="학업 이력">
+<li><span class="education-node">01</span><div class="education-year">2010 — 2015</div><h3>Ky Ha 초등학교</h3><p>초등 과정 수료</p></li>
+<li><span class="education-node">02</span><div class="education-year">2015 — 2019</div><h3>Ky Ha 중학교</h3><p>중등 과정 수료</p></li>
+<li><span class="education-node">03</span><div class="education-year">2019 — 2021</div><h3>Ky Anh 고등학교</h3><p>고등 과정 수료</p></li>
+<li><span class="education-node">04</span><div class="education-year">2023.12 — 2025.06</div><h3>아주대학교 국제교육센터</h3><p>한국어 과정</p></li>
+<li class="education-current"><span class="education-node">05</span><div class="education-year">2025.09 — 현재</div><h3>연성대학교 경영학과</h3><p>현재 재학 중</p></li>
+</ol>
+</div></section>
 
 <section class="band" id="hobby"><div class="in2">
 <h2>취미생활</h2><p class="sub">숨이 차오르는 순간이 머리를 맑게 해 줘요.</p>
