@@ -148,6 +148,29 @@ footer{padding:36px 20px 48px;background:#e9e8df;color:#64726e}
 .education-current h3{color:#101b31}
 @media(max-width:760px){.education-timeline{grid-template-columns:1fr;gap:0;margin:42px 0 0;padding-left:4px}.education-timeline:before{left:22px;right:auto;top:18px;bottom:26px;width:2px;height:auto}.education-timeline li{min-height:126px;padding:3px 0 24px 68px;text-align:left}.education-node{left:22px;transform:translateX(-50%)}.education-timeline h3{font-size:1.04rem}.education-current{min-height:100px!important}}
 @media(max-width:460px){.education-intro{align-items:flex-start}.education-count{gap:4px;flex-direction:column;align-items:flex-end}.education-count b{font-size:1.9rem}.education-kicker{font-size:.68rem}.education-intro .sub{font-size:.92rem}}
+/* Sunset swim scene replaces the mountain silhouette */
+.hero .swim-scene{position:relative;isolation:isolate;display:block;width:100%;max-width:560px;height:310px;margin:0;overflow:hidden;border:1px solid rgba(255,255,255,.22);border-radius:28px;background:linear-gradient(180deg,#eaa995 0%,#f4c4a5 37%,#74c2be 38%,#389da6 58%,#174f61 100%);box-shadow:0 18px 42px rgba(3,18,28,.24)}
+.swim-sun{position:absolute;z-index:0;top:13%;right:18%;width:56px;height:56px;border-radius:50%;background:#ffe4b8;box-shadow:0 0 34px rgba(255,224,184,.7)}
+.swim-horizon{position:absolute;z-index:1;top:39%;left:-5%;width:110%;height:30px;border-top:2px solid rgba(255,245,232,.62);border-radius:50%;transform:rotate(-2deg)}
+.swim-water{position:absolute;z-index:0;inset:41% 0 0;background:linear-gradient(180deg,rgba(91,183,185,.72),rgba(20,67,83,.96))}
+.swim-water:before,.swim-water:after{content:"";position:absolute;left:-10%;width:120%;height:24px;border-top:1px solid rgba(205,245,232,.42);border-radius:50%;animation:water-drift 8s ease-in-out infinite alternate}
+.swim-water:before{top:16%;transform:rotate(2deg)}.swim-water:after{top:64%;transform:rotate(-2deg);opacity:.42;animation-delay:-4s}
+.swim-ripple{position:absolute;z-index:1;height:5px;border-top:2px solid rgba(235,250,233,.65);border-radius:50%;opacity:.72;animation:ripple-glide 3.4s ease-in-out infinite alternate}
+.ripple-a{top:59%;left:12%;width:70px}.ripple-b{top:72%;right:13%;width:94px;animation-delay:-1.5s}.ripple-c{top:48%;right:29%;width:42px;animation-delay:-2.2s}
+.swim-track{position:absolute;z-index:2;top:45%;left:8%;width:150px;height:66px;transform:translateX(-50%);animation:swim-cross 12s ease-in-out infinite}
+.swimmer{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 5px 6px rgba(8,39,50,.28));animation:swimmer-bob 1.1s ease-in-out infinite alternate}
+.swimmer-arm{transform-box:fill-box;transform-origin:10% 85%;animation:swimmer-stroke 1.15s ease-in-out infinite alternate}
+.swimmer-leg{transform-box:fill-box;transform-origin:0 50%;animation:swimmer-kick .55s ease-in-out infinite alternate}
+.swimmer-leg.leg-b{animation-delay:-.28s}
+.swim-plant{position:absolute;z-index:2;bottom:-8px;width:9px;height:66px;border-radius:90% 10% 0 0;background:linear-gradient(90deg,#204f55,#4e8a78);transform-origin:bottom center;animation:plant-sway 3s ease-in-out infinite alternate}
+.swim-plant:before,.swim-plant:after{content:"";position:absolute;width:17px;height:8px;border-radius:100% 0 100% 0;background:#57917e}
+.swim-plant:before{left:-12px;top:24px;transform:rotate(20deg)}.swim-plant:after{left:3px;top:42px;transform:rotate(-35deg)}
+.plant-a{left:8%;height:50px}.plant-b{left:14%;height:34px;animation-delay:-1.1s}.plant-c{right:8%;height:58px;animation-delay:-.7s}
+@keyframes swim-cross{0%,2%{left:9%;transform:translateX(-50%) scaleX(1)}47%{left:91%;transform:translateX(-50%) scaleX(1)}50%{left:91%;transform:translateX(-50%) scaleX(-1)}97%{left:9%;transform:translateX(-50%) scaleX(-1)}100%{left:9%;transform:translateX(-50%) scaleX(1)}}
+@keyframes swimmer-bob{to{transform:translateY(3px) rotate(1deg)}}@keyframes swimmer-stroke{to{transform:rotate(14deg)}}@keyframes swimmer-kick{to{transform:rotate(11deg)}}
+@keyframes water-drift{to{translate:2% 0;opacity:.55}}@keyframes ripple-glide{to{translate:18px 0;opacity:.32}}@keyframes plant-sway{to{transform:rotate(7deg)}}
+@media(max-width:700px){.hero .swim-scene{height:190px;border-radius:22px}.swim-track{width:126px;height:56px}.swim-sun{width:40px;height:40px}}
+@media(prefers-reduced-motion:reduce){.swim-track,.swimmer,.swimmer-arm,.swimmer-leg,.swim-water:before,.swim-water:after,.swim-ripple,.swim-plant{animation:none!important}.swim-track{left:50%;transform:translateX(-50%)}}
 </style>
 <style>.pick-mario{--pick-color:#dc2626;--pick-glow:rgba(250,204,21,.38);background:linear-gradient(145deg,#fff7ed,#fee2e2)}.pick-onet{--pick-color:#15803d;--pick-glow:rgba(74,222,128,.38);background:linear-gradient(145deg,#f0fdf4,#cffafe)}</style>
 <style>
@@ -169,7 +192,12 @@ footer{padding:36px 20px 48px;background:#e9e8df;color:#64726e}
 <div class="chips"><span class="chip">마라톤</span><span class="chip">자전거</span><span class="chip">음악</span><span class="chip">게임</span><span class="chip">독서</span></div>
 <p style="margin-top:18px"><span class="meta" style="color:#bcd8d1">nghiahanghia205@gmail.com</span><br><button class="btn" id="copyBtn" type="button">이메일 복사</button> <a class="btn" href="https://maps.app.goo.gl/hegatpPcW96LUWkg6" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;background:#fff;color:#0e3a40">📍 고향 지도 보기</a> <a class="btn youtube-btn" href="https://youtube.com/@hanghiaa" target="_blank" rel="noopener noreferrer" aria-label="응이아의 YouTube 채널 새 탭에서 열기">▶ YouTube 채널</a></p>
 </div>
-<svg viewBox="0 0 800 130" preserveAspectRatio="none" aria-hidden="true"><path class="route" d="M0 110 C80 110 100 70 170 78 S260 30 340 50 S430 100 500 70 S600 10 680 28 S760 60 800 40" fill="none" stroke="#ffc93c" stroke-width="5" stroke-linecap="round"/><path d="M0 110 C80 110 100 70 170 78 S260 30 340 50 S430 100 500 70 S600 10 680 28 S760 60 800 40 V130 H0Z" fill="#fff" opacity=".07"/></svg>
+<div class="swim-scene" role="img" aria-label="노을빛 바다에서 좌우로 수영하는 사람">
+<span class="swim-sun" aria-hidden="true"></span><span class="swim-horizon" aria-hidden="true"></span><span class="swim-water" aria-hidden="true"></span>
+<span class="swim-ripple ripple-a" aria-hidden="true"></span><span class="swim-ripple ripple-b" aria-hidden="true"></span><span class="swim-ripple ripple-c" aria-hidden="true"></span>
+<span class="swim-plant plant-a" aria-hidden="true"></span><span class="swim-plant plant-b" aria-hidden="true"></span><span class="swim-plant plant-c" aria-hidden="true"></span>
+<div class="swim-track" aria-hidden="true"><svg class="swimmer" viewBox="0 0 160 70" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#fff5e8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><circle cx="28" cy="29" r="7" fill="#fff5e8" stroke="none"/><path d="M38 32c18 1 37 8 59 5"/><path class="swimmer-arm" d="M49 34c2-15 15-24 32-25l20 5"/><path d="M49 35c-12 9-25 11-37 6"/><path class="swimmer-leg" d="M96 37c17 8 31 12 49 9"/><path class="swimmer-leg leg-b" d="M96 37c17-8 31-11 49-7"/></g></svg></div>
+</div>
 </div>
 
 <section class="band education" id="education" aria-labelledby="education-title"><div class="in2">
