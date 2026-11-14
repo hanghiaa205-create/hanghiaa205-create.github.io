@@ -182,7 +182,7 @@ footer{padding:36px 20px 48px;background:#e9e8df;color:#64726e}
 .dive-label small{font:700 .58rem/1.2 Arial,sans-serif;opacity:.76}.dive-label b{font:700 .73rem/1.2 Arial,sans-serif}
 .dive-scale{position:absolute;z-index:3;right:4%;top:23%;height:54%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;color:rgba(205,242,255,.78);font:700 .48rem/1 Arial,sans-serif;letter-spacing:.1em;text-shadow:0 1px 6px rgba(0,23,40,.5)}
 .dive-scale i{display:block;width:9px;border-top:1px solid rgba(205,242,255,.58)}.dive-scale i:nth-of-type(2){width:15px}
-.swim-track{left:16%;top:48%}
+.swim-track{left:20%;top:48%}
 .hero .swimmer{position:relative;z-index:2;width:100%;max-width:none;height:100%;margin:0;filter:drop-shadow(0 2px 7px rgba(142,235,255,.5))}
 .hero .swimmer path{fill:none;stroke:#082d49;opacity:1}.hero .swimmer rect{fill:#0a3a5d;stroke:#082d49}.hero .swimmer circle{fill:#082d49}
 .swim-fish{position:absolute;z-index:1;width:17px;height:5px;border-radius:50%;background:rgba(5,42,75,.7);animation:fish-drift 8s ease-in-out infinite alternate}
@@ -192,9 +192,10 @@ footer{padding:36px 20px 48px;background:#e9e8df;color:#64726e}
 .bubble-a{left:28%;bottom:20%}.bubble-b{right:24%;bottom:31%;width:5px;height:5px;animation-delay:-2.1s}
 .swim-plant{background:linear-gradient(90deg,#123a53,#398789)}.swim-plant:before,.swim-plant:after{background:#4b9d9b}
 .plant-a{left:8%;height:50px}.plant-b{left:14%;height:34px}.plant-c{right:8%;height:58px}
-@keyframes swim-cross{0%,2%{left:16%;transform:translateX(-50%) scaleX(1)}47%{left:84%;transform:translateX(-50%) scaleX(1)}50%{left:84%;transform:translateX(-50%) scaleX(-1)}97%{left:16%;transform:translateX(-50%) scaleX(-1)}100%{left:16%;transform:translateX(-50%) scaleX(1)}}
+@keyframes swim-cross{0%,2%{left:20%;transform:translateX(-50%) scaleX(1)}47%{left:76%;transform:translateX(-50%) scaleX(1)}50%{left:76%;transform:translateX(-50%) scaleX(-1)}97%{left:20%;transform:translateX(-50%) scaleX(-1)}100%{left:20%;transform:translateX(-50%) scaleX(1)}}
 @keyframes light-shift{to{transform:translateX(2%) scale(1.03);opacity:.65}}@keyframes fish-drift{to{translate:12px -5px;opacity:.28}}@keyframes bubble-rise{to{translate:0 -42px;opacity:0}}
-@media(max-width:700px){.hero .swim-scene{height:190px}.swim-track{width:126px;height:56px}.dive-ring{width:66%}.dive-label{left:4%;bottom:6%}.dive-scale{right:2%}}
+@keyframes swim-cross-mobile{0%,2%{left:20%;transform:translateX(-50%) scaleX(1)}47%{left:70%;transform:translateX(-50%) scaleX(1)}50%{left:70%;transform:translateX(-50%) scaleX(-1)}97%{left:20%;transform:translateX(-50%) scaleX(-1)}100%{left:20%;transform:translateX(-50%) scaleX(1)}}
+@media(max-width:700px){.hero .swim-scene{height:190px}.swim-track{left:20%;width:126px;height:56px;animation-name:swim-cross-mobile}.dive-ring{width:66%}.dive-label{left:4%;bottom:6%}.dive-scale{right:2%}}
 @media(prefers-reduced-motion:reduce){.swim-track,.swimmer,.swimmer-arm,.swimmer-leg,.swim-water:before,.swim-water:after,.swim-ripple,.swim-plant,.swim-scene:before,.swim-fish,.swim-bubble{animation:none!important}.swim-track{left:50%;transform:translateX(-50%) scaleX(1)}}
 </style>
 <style>.pick-mario{--pick-color:#dc2626;--pick-glow:rgba(250,204,21,.38);background:linear-gradient(145deg,#fff7ed,#fee2e2)}.pick-onet{--pick-color:#15803d;--pick-glow:rgba(74,222,128,.38);background:linear-gradient(145deg,#f0fdf4,#cffafe)}</style>
