@@ -276,6 +276,12 @@ header{background:rgba(5,42,56,.58)}
 @media(max-width:700px){.swim-track{width:clamp(92px,25vw,118px);left:77%;top:23%;animation-name:diver-orbit-mobile}.swim-coral{width:58px;height:86px}.coral-b{height:70px}.swim-sponge{height:48px}.sponge-b{height:35px}.sponge-c{height:25px}}
 @keyframes diver-orbit-mobile{0%,100%{left:77%;top:23%;transform:translate(-50%,-50%) rotate(-4deg) scaleX(-1)}23%{left:88%;top:42%;transform:translate(-50%,-50%) rotate(15deg) scaleX(-1)}48%{left:81%;top:67%;transform:translate(-50%,-50%) rotate(28deg) scaleX(1)}73%{left:66%;top:59%;transform:translate(-50%,-50%) rotate(-12deg) scaleX(1)}}
 @media(prefers-reduced-motion:reduce){.swim-track,.swim-wake,.swim-coral,.swim-sponge,.swim-fish,.swim-bubble{animation:none!important}.swim-track{left:76%;top:46%;transform:translate(-50%,-50%) scaleX(-1)}}
+/* Keep reef SVGs independent from the hero's general SVG sizing */
+.hero svg.swim-coral{position:absolute;z-index:2;width:clamp(50px,7vw,88px);max-width:none;height:clamp(74px,11vw,132px);margin:0;overflow:visible;filter:drop-shadow(0 3px 8px rgba(0,24,38,.25))}
+.hero svg.coral-a path{stroke:#ff8b79;stroke-width:8;fill:none;opacity:1}
+.hero svg.coral-b path{stroke:#8ad8c8;stroke-width:8;fill:none;opacity:1}
+.hero svg.swim-coral path:last-child{fill:none;opacity:1}
+@media(max-width:700px){.hero svg.swim-coral{width:58px;height:86px}.hero svg.coral-b{height:70px}}
 </style>
 </head>
 <body>
