@@ -1,0 +1,2 @@
+[functions.submit-book-review]
+verify_jwt = false
