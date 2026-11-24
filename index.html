@@ -352,6 +352,19 @@ header{background:rgba(5,42,56,.58)}
 #videos .video-card h3{font-size:clamp(1.15rem,2.5vw,1.45rem);margin:8px 0 12px}
 #videos .video-link{display:inline-flex;align-items:center;gap:7px;color:var(--sea);font-weight:700;text-decoration:none}
 #videos .video-link:hover{text-decoration:underline}
+
+/* Nghia's little panda companion */
+.panda-walk{position:fixed;left:0;bottom:max(4px,env(safe-area-inset-bottom,0px));z-index:9;width:96px;height:104px;pointer-events:none;animation:panda-cross 28s linear infinite;will-change:transform}
+.panda-walk svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 5px 4px rgba(15,35,32,.15))}
+.panda-bob{transform-box:fill-box;transform-origin:center bottom;animation:panda-bob .48s ease-in-out infinite alternate}
+.panda-foot-left,.panda-foot-right{transform-box:fill-box;transform-origin:center top}
+.panda-foot-left{animation:panda-step .48s ease-in-out infinite alternate}
+.panda-foot-right{animation:panda-step .48s ease-in-out infinite alternate-reverse}
+@keyframes panda-cross{from{transform:translateX(-110px)}to{transform:translateX(calc(100vw + 110px))}}
+@keyframes panda-bob{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+@keyframes panda-step{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+@media(max-width:600px){.panda-walk{width:76px;height:84px;bottom:max(2px,env(safe-area-inset-bottom,0px))}}
+@media(prefers-reduced-motion:reduce){.panda-walk{animation:none;left:auto;right:12px}.panda-bob,.panda-foot-left,.panda-foot-right{animation:none}}
 </style>
 </head>
 <body>
@@ -459,6 +472,23 @@ header{background:rgba(5,42,56,.58)}
 </form></dialog>
 
 <footer>응이아의 홈페이지 · nghiahanghia205@gmail.com · <a href="https://maps.app.goo.gl/hegatpPcW96LUWkg6" target="_blank" rel="noopener" style="color:inherit">📍 고향 지도</a></footer>
+
+<div class="panda-walk" aria-hidden="true">
+<svg viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg">
+<g class="panda-bob">
+<ellipse cx="34" cy="31" rx="18" ry="20" fill="#171918"/><ellipse cx="86" cy="31" rx="18" ry="20" fill="#171918"/>
+<g class="panda-foot-left"><path d="M39 91c-2 13-6 18-17 21-8 2-13 7-11 12 2 5 17 5 27 2 11-3 14-11 13-23z" fill="#171918"/></g>
+<g class="panda-foot-right"><path d="M75 91c2 13 6 18 17 21 8 2 13 7 11 12-2 5-17 5-27 2-11-3-14-11-13-23z" fill="#171918"/></g>
+<path d="M31 61c-2 14 0 31 10 37 9 5 29 5 38 0 10-6 12-23 10-37z" fill="#171918"/>
+<ellipse cx="60" cy="52" rx="43" ry="39" fill="#fffefa" stroke="#202321" stroke-width="2.5"/>
+<ellipse cx="42" cy="51" rx="11" ry="14" transform="rotate(24 42 51)" fill="#171918"/>
+<ellipse cx="78" cy="51" rx="11" ry="14" transform="rotate(-24 78 51)" fill="#171918"/>
+<ellipse cx="44" cy="50" rx="4.5" ry="6" fill="#fff"/><ellipse cx="76" cy="50" rx="4.5" ry="6" fill="#fff"/>
+<circle cx="45" cy="51" r="2.4" fill="#171918"/><circle cx="75" cy="51" r="2.4" fill="#171918"/>
+<ellipse cx="29" cy="68" rx="7" ry="3.6" fill="#f4a5a5" opacity=".8"/><ellipse cx="91" cy="68" rx="7" ry="3.6" fill="#f4a5a5" opacity=".8"/>
+<path d="M56 65q4-4 8 0-1 5-4 5t-4-5" fill="#171918"/><path d="M53 73q7 8 14 0" fill="none" stroke="#171918" stroke-width="2" stroke-linecap="round"/>
+<path d="M49 85q11 10 22 0-3 16-11 16t-11-16" fill="#fffefa"/>
+</g></svg></div>
 
 <script src="assets/book-reviews-config.js"></script>
 <script>
