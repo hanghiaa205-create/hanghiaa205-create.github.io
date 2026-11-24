@@ -339,11 +339,22 @@ header{background:rgba(5,42,56,.58)}
 .education-kicker{font-size:.62rem}
 .education-intro .sub{max-width:19em;line-height:1.55}
 }
+
+#videos h2:before{content:"NGHĨA · VIDEOS"}
+#videos .video-grid{align-items:stretch}
+#videos .video-card{padding:14px;overflow:hidden}
+#videos .video-frame{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:16px;background:#111a25}
+#videos .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#videos .video-copy{padding:16px 8px 8px}
+#videos .video-kicker{color:var(--sea);font:800 .7rem/1.2 "Gowun Dodum",sans-serif;letter-spacing:.15em}
+#videos .video-card h3{font-size:clamp(1.15rem,2.5vw,1.45rem);margin:8px 0 12px}
+#videos .video-link{display:inline-flex;align-items:center;gap:7px;color:var(--sea);font-weight:700;text-decoration:none}
+#videos .video-link:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 <header><nav aria-label="메뉴">
-<a href="#intro" data-s="intro">자기소개</a><a href="#education" data-s="education">교육과정</a><a href="#hobby" data-s="hobby">취미생활</a><a href="#music" data-s="music">음악감성</a><a href="#game" data-s="game">게임함</a><a href="#library" data-s="library">도서관</a>
+<a href="#intro" data-s="intro">자기소개</a><a href="#education" data-s="education">교육과정</a><a href="#hobby" data-s="hobby">취미생활</a><a href="#music" data-s="music">음악감성</a><a href="#videos" data-s="videos">영상 작업</a><a href="#game" data-s="game">게임함</a><a href="#library" data-s="library">도서관</a>
 </nav></header>
 
 <div class="hero" id="intro">
@@ -391,6 +402,20 @@ header{background:rgba(5,42,56,.58)}
 <div class="card">
 <a class="track" href="https://suno.com/song/bee3f29b-5e31-4e1b-8778-77a15904f0d0?sh=mgSN9UCRWO9sLZCI" target="_blank" rel="noopener"><span class="play" style="background:var(--violet)">▶</span><div><b>음악 1</b><div class="meta">Suno에서 듣기</div></div></a>
 <a class="track" href="https://www.mureka.ai/ko/song-detail/XbspACr4tkt2tdwNhDG6Ay?is_from_share=1" target="_blank" rel="noopener"><span class="play" style="background:var(--coral)">▶</span><div><b>음악 2</b><div class="meta">Mureka에서 듣기</div></div></a>
+</div>
+</div></section>
+
+<section class="band" id="videos"><div class="in2">
+<h2>영상 작업</h2><p class="sub">직접 만든 영상 두 편을 소개합니다. 광고학개론 수업에서 완성한 작업을 감상해 보세요.</p>
+<div class="grid video-grid">
+<article class="card video-card">
+<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/QhCjWMVeYBo?rel=0" title="연성대학교 광고학개론 기말과제-야호조" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="video-copy"><span class="video-kicker">FINAL PROJECT</span><h3>연성대학교 광고학개론 기말과제 · 야호조</h3><a class="video-link" href="https://youtu.be/QhCjWMVeYBo" target="_blank" rel="noopener noreferrer">YouTube에서 보기 <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="card video-card">
+<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/XnD7y4kZ6m0?rel=0" title="연성대학교에서 광고학개론 수업" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="video-copy"><span class="video-kicker">CLASS PROJECT</span><h3>연성대학교에서 광고학개론 수업</h3><a class="video-link" href="https://youtu.be/XnD7y4kZ6m0" target="_blank" rel="noopener noreferrer">YouTube에서 보기 <span aria-hidden="true">↗</span></a></div>
+</article>
 </div>
 </div></section>
 
