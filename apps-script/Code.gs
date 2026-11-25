@@ -1,4 +1,4 @@
-const REVIEW_RECIPIENT = 'nghiahanghia205@gmail.com';
+const REVIEW_RECIPIENT = 'hanghiaa205@gmail.com';
 
 // Run this once in the Apps Script editor, then copy the execution log value
 // into the Supabase Edge Function secret EMAIL_BRIDGE_TOKEN.
