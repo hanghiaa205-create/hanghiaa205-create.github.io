@@ -378,6 +378,23 @@ header{background:rgba(5,42,56,.58)}
 @media(max-width:600px){.panda-walk{width:76px;height:84px;bottom:max(2px,env(safe-area-inset-bottom,0px))}}
 @media(prefers-reduced-motion:reduce){.panda-walk{animation:none;left:auto;right:12px}.panda-bob,.panda-foot-left,.panda-foot-right,.panda-wave,.panda-expression{animation:none!important}.panda-expression{opacity:0!important}.panda-expression-1{opacity:1!important}}
 </style>
+<style>
+#game{background:#f1f3f3;color:#111b26}
+#game .game-heading{margin-bottom:18px}
+#game .game-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 23px}
+#game .game-filter{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:7px 15px;border:1px solid #cfd8da;border-radius:999px;background:transparent;color:#324451;font:700 .82rem "Gowun Dodum",sans-serif;cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+#game .game-filter:hover{border-color:#84969e}
+#game .game-filter.is-active{border-color:#b5ef68;background:#b5ef68;color:#182218}
+#game .game-filter span{font:700 .72rem Arial,sans-serif;opacity:.76}
+#game .game-picks{padding:0 0 8px}
+#game .game-picks-heading{margin-bottom:13px}
+#game .game-pick-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+#game .game-pick{min-height:174px}
+#game .game-pick.is-selected{border-color:#89b84e;box-shadow:0 0 0 2px rgba(181,239,104,.4)}
+#game .game-pick[hidden]{display:none}
+@media(max-width:760px){#game .game-pick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){#game .game-pick-grid{grid-template-columns:1fr}#game .game-pick{min-height:150px}}
+</style>
 </head>
 <body>
 <header><nav aria-label="메뉴">
@@ -447,19 +464,20 @@ header{background:rgba(5,42,56,.58)}
 </div></section>
 
 <section class="band" id="game"><div class="in2">
-<div class="game-heading"><div><span class="game-kicker">NGHĨA · INTERACTIVE</span><h2>게임 아케이드</h2><p class="sub">퍼즐, 카드, 플랫폼 모험, 레슬링과 몬스터 배틀까지 여섯 게임을 브라우저에서 바로 즐겨 보세요.</p></div><a class="game-window-link" href="hanghia_game_dice.html?v=20261110i" target="_blank" rel="noopener">아케이드 전체 화면으로 열기 ↗</a></div>
-<div class="game-showcase">
-<div class="game-showcase-copy"><span class="game-kicker">BROWSER ARCADE · READY TO PLAY</span><h3>오늘의 플레이,<br><em>여기서 시작</em></h3><p>여섯 가지 게임을 직접 골라 플레이하세요. 플랫폼 모험, 동물 퍼즐, 레슬링 액션과 몬스터 배틀을 한곳에서 즐겨 보세요.</p><div class="game-showcase-actions"><a class="game-cta" href="#game-hub">게임 선택하기 <span>↓</span></a></div><div class="game-tags"><span>01 · 퍼즐</span><span>02 · 카드</span><span>03 · 플랫폼</span><span>04 · 레슬링</span><span>05 · 몬스터 배틀</span></div></div>
-<div class="game-scene" aria-hidden="true"><div class="arcade-orbit"></div><div class="arcade-console"><div class="console-top"><span>NGHĨA / ARCADE</span><span>PLAYER 01</span></div><div class="console-screen"><span>SELECT YOUR GAME</span><div class="screen-icons"><b>2048</b><b>🤼</b><b>⚡</b></div><span>PLAY · FOCUS · REPEAT</span></div><div class="console-controls"><i></i><i></i><i></i><i></i></div></div><span class="art-index">Nº 001—006</span></div>
+<div class="game-heading"><div><span class="game-kicker">NGHĨA · INTERACTIVE</span><h2>게임 아케이드</h2><p class="sub">원하는 플레이 방식으로 골라 보세요. 여섯 가지 게임을 브라우저에서 바로 즐길 수 있어요.</p></div><a class="game-window-link" href="hanghia_game_dice.html?v=20261110i" target="_blank" rel="noopener">아케이드 전체 화면으로 열기 ↗</a></div>
+<div class="game-filters" role="group" aria-label="플레이 방식으로 게임 분류">
+<button class="game-filter is-active" type="button" data-game-filter="all" aria-pressed="true">전체 <span>6</span></button>
+<button class="game-filter" type="button" data-game-filter="puzzle" aria-pressed="false">퍼즐</button>
+<button class="game-filter" type="button" data-game-filter="action" aria-pressed="false">액션</button>
+<button class="game-filter" type="button" data-game-filter="battle" aria-pressed="false">배틀</button>
 </div>
-<div class="game-info-row"><div><b>06</b><span>미니게임</span></div><div><b>03</b><span>플레이 카테고리</span></div><div><b>WEB</b><span>설치 없이 플레이</span></div><p>즐겨찾기와 최고 점수는 이 브라우저에 저장됩니다.</p></div>
-<div class="game-picks"><div class="game-picks-heading"><div><span>THE GAME LINEUP</span><h3>무엇부터 플레이할까요?</h3></div><p>게임을 고르면 아래 아케이드에서 바로 시작할 수 있어요.</p></div><div class="game-pick-grid">
-<a class="game-pick pick-puzzle" data-game-id="game2048" href="#game-hub"><span class="pick-number">01 / PUZZLE</span><span class="pick-icon">2048</span><b>2048 퍼즐</b><small>숫자를 합쳐 목표 타일에 도전</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-card" data-game-id="gameSolitaire" href="#game-hub"><span class="pick-number">02 / CARDS</span><span class="pick-icon">♠</span><b>스파이더 카드</b><small>카드를 정리하는 집중 플레이</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-mario" data-game-id="gameMario" href="#game-hub"><span class="pick-number">03 / PLATFORM</span><span class="pick-icon">🍄</span><b>슈퍼 마리오 브라더스</b><small>달리고 점프하며 코인을 모아요</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-onet" data-game-id="gameOnet" href="#game-hub"><span class="pick-number">04 / MATCH</span><span class="pick-icon">🐾</span><b>클래식 동물 연결</b><small>같은 동물을 길로 이어 짝 맞추기</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-wrestlefest" data-game-id="gameWwf" href="#game-hub"><span class="pick-number">05 / WRESTLING</span><span class="pick-icon">🤼</span><b>WWF 레슬페스트</b><small>이동·점프·공격으로 링 대결</small><span class="pick-link">게임 선택하기 ↘</span></a>
-<a class="game-pick pick-pokemon" data-game-id="gamePokemon" href="#game-hub"><span class="pick-number">06 / MONSTER BATTLE</span><span class="pick-icon">⚡</span><b>포켓몬스터</b><small>파트너 몬스터와 턴제 배틀</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<div class="game-picks"><div class="game-picks-heading"><div><span>CHOOSE A GAME</span><h3>무엇을 해보고 싶나요?</h3></div><p>게임을 누르면 아래 아케이드에서 시작해요.</p></div><div class="game-pick-grid" aria-label="게임 목록">
+<a class="game-pick pick-puzzle" data-game-id="game2048" data-game-category="puzzle" href="#game-hub"><span class="pick-number">01 / 퍼즐</span><span class="pick-icon">2048</span><b>2048 퍼즐</b><small>숫자를 합쳐 목표 타일에 도전</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-card" data-game-id="gameSolitaire" data-game-category="puzzle" href="#game-hub"><span class="pick-number">02 / 카드</span><span class="pick-icon">♠</span><b>스파이더 카드</b><small>카드를 정리하는 집중 플레이</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-mario" data-game-id="gameMario" data-game-category="action" href="#game-hub"><span class="pick-number">03 / 플랫폼</span><span class="pick-icon">🍄</span><b>슈퍼 마리오 브라더스</b><small>달리고 점프하며 코인을 모아요</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-onet" data-game-id="gameOnet" data-game-category="puzzle" href="#game-hub"><span class="pick-number">04 / 짝 맞추기</span><span class="pick-icon">🐾</span><b>클래식 동물 연결</b><small>같은 동물을 길로 이어 짝 맞추기</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-wrestlefest" data-game-id="gameWwf" data-game-category="action" href="#game-hub"><span class="pick-number">05 / 레슬링</span><span class="pick-icon">🤼</span><b>WWF 레슬페스트</b><small>이동·점프·공격으로 링 대결</small><span class="pick-link">게임 선택하기 ↘</span></a>
+<a class="game-pick pick-pokemon" data-game-id="gamePokemon" data-game-category="battle" href="#game-hub"><span class="pick-number">06 / 배틀</span><span class="pick-icon">⚡</span><b>포켓몬스터</b><small>파트너 몬스터와 턴제 배틀</small><span class="pick-link">게임 선택하기 ↘</span></a>
 </div></div>
 <div class="game-hub-label" id="game-hub"><div><span>ARCADE LIBRARY</span><h3>플레이할 게임을 선택하세요</h3></div><a href="hanghia_game_dice.html?v=20261110i" target="_blank" rel="noopener">넓은 화면으로 보기 ↗</a></div>
 <div class="card game-frame-card" style="padding:8px;overflow:hidden">
@@ -556,6 +574,20 @@ document.querySelector('.book-dialog-close').addEventListener('click',function()
 dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close()});
 saveReview.addEventListener('click',async function(){var nickname=reviewNickname.value.trim(),text=reviewText.value.trim();if(!sbUrl||!publicKey||!activeBook)return;if(!nickname){reviewNickname.focus();reviewSaved.textContent='닉네임을 입력해 주세요.';return}if(!text){reviewText.focus();reviewSaved.textContent='리뷰 내용을 입력해 주세요.';return}if(nickname.length>32||text.length>2000){reviewSaved.textContent='닉네임은 32자, 리뷰는 2,000자까지 입력할 수 있어요.';return}saveReview.disabled=true;reviewSaved.textContent='리뷰를 등록하는 중…';try{var res=await fetch(sbUrl+'/functions/v1/submit-book-review',{method:'POST',headers:headers(),body:JSON.stringify({bookTitle:activeBook,nickname:nickname,rating:reviewRating.value?Number(reviewRating.value):null,reviewText:text})}),data=await res.json();if(!res.ok)throw new Error(data.error||'등록하지 못했어요.');reviewText.value='';await loadReviews();reviewSaved.textContent=data.emailSent?'리뷰가 공개됐고 이메일 알림도 보냈어요.':'리뷰는 공개됐지만 이메일 알림에 문제가 있어요.'}catch(e){reviewSaved.textContent=e.message||'리뷰 등록에 실패했어요. 잠시 후 다시 시도해 주세요.'}finally{saveReview.disabled=false}});
 
+})();
+</script>
+<script>
+(function(){
+var filters=[].slice.call(document.querySelectorAll('#game .game-filter'));
+var cards=[].slice.call(document.querySelectorAll('#game .game-pick[data-game-category]'));
+filters.forEach(function(filter){filter.addEventListener('click',function(){
+var category=filter.dataset.gameFilter;
+filters.forEach(function(button){var active=button===filter;button.classList.toggle('is-active',active);button.setAttribute('aria-pressed',String(active))});
+cards.forEach(function(card){card.hidden=category!=='all'&&card.dataset.gameCategory!==category});
+var selected=document.querySelector('#game .game-pick.is-selected');
+if(selected&&selected.hidden)selected.classList.remove('is-selected');
+})});
+cards.forEach(function(card){card.addEventListener('click',function(){cards.forEach(function(item){item.classList.toggle('is-selected',item===card)})})});
 })();
 </script>
 <script>
