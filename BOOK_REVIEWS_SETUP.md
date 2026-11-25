@@ -20,7 +20,7 @@
 7. 프로젝트 루트에서 Supabase CLI를 로그인/연결한 다음 `supabase functions deploy submit-book-review`를 실행합니다.
 
 ## 운영 메모
-- 이메일은 Apps Script를 실행한 Google 계정에서 발송되고, 수신자는 `nghiahanghia205@gmail.com`입니다. Apps Script가 Gmail 발송 권한을 요구할 때 계정을 확인하세요.
+- 이메일은 Apps Script를 실행한 Google 계정에서 발송되고, 수신자는 `hanghiaa205@gmail.com`입니다. Apps Script가 Gmail 발송 권한을 요구할 때 계정을 확인하세요.
 - 닉네임·별점·리뷰는 모든 방문자에게 공개됩니다. 닉네임은 인증되지 않습니다.
 - 공개 리뷰 등록은 현재 로그인 없이 가능하므로 스팸 방지/신고 기능이 필요하면 추가해야 합니다.
 - 데이터베이스 저장 성공 후 Gmail 발송에 실패하면 리뷰는 공개되며 화면에 알림 실패가 표시됩니다.
